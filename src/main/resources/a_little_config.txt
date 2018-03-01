@@ -1,4 +1,4 @@
-jdbcUrl = jdbc:mysql://localhost/demo?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+jdbcUrl = jdbc:mysql://localhost/forum?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
 user = root
 password =111
 devMode = true

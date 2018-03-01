@@ -1,0 +1,117 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>登录</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Internship Sign In Sign Up Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="../bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" type="text/css"  />
+<!-- Custom Theme files -->
+<link href="../LoginAndReg/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../LoginAndReg/css/snow.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../LoginAndReg/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- //Custom Theme files -->
+<!-- web font -->
+<!--<link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">-->
+
+<!-- //web font -->
+</head>
+<body>
+<div class="snow-container">
+			  <div class="snow foreground"></div>
+			  <div class="snow foreground layered"></div>
+			  <div class="snow middleground"></div>
+			  <div class="snow middleground layered"></div>
+			  <div class="snow background"></div>
+			  <div class="snow background layered"></div>
+			</div>
+
+<div class="top-buttons-agileinfo">
+<a href="/forum/LoginAndRegMapping/login"  class="active">登录</a><a href="/forum/LoginAndRegMapping/reg">注册</a>
+</div>
+<h1>登录
+</h1>
+<div class="main-agileits">
+<!--form-stars-here-->
+		<div class="form-w3-agile">
+			<h2 class="sub-agileits-w3layouts">LOGIN</h2>
+			<form  id="f1" >
+					<input type="text" name="username" id="name" placeholder="用户" required="" />
+					<input type="password" name="password" id="pwd" placeholder="密码" required="" />
+					<a href="#" class="forgot-w3layouts">忘记密码 ?</a>
+				<div class="submit-w3l">
+					<input type="submit" value="登录" onclick="login()"  />
+				</div>
+				<p class="p-bottom-w3ls"><a href="/forum/LoginAndRegMapping/reg">点击注册</a>如果你没有一个帐户。
+.</p>
+			</form>
+		</div>
+		</div>
+<!--//form-ends-here-->
+
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+			</div>
+			<div class="modal-body" id="word">
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+				</button>
+			
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
+	<!-- 模态框 -->
+
+<!-- copyright -->
+	<div class="copyright w3-agile">
+		<p><a> © 2018</a></p>
+	</div>
+	<!-- //copyright --> 
+	<script type="text/javascript" src="../jqeury/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+	<script>
+	  /*<![CDATA[*/
+	$(function(){
+		$("#f1").submit(function(){
+			return false;
+		});
+	})
+	
+	//登录
+	function login(){
+		var name = $("#name").val();
+    	var pwd = $("#pwd").val();
+    	if( name != "" && pwd != "" ){
+    		
+    
+		$.post("/forum/LoginAndRegController/login",{"username":name,"password":pwd},function(data){
+			if(data == "1"){
+				location.href="/forum/homeMapping/homepage";
+			}else{
+				$("#word").html("用户名或密码错误请重试");
+			}
+			$("#myModal").modal("show");
+		});
+    	}
+		
+	}
+	/*]]>*/
+	</script>
+</body>
+</html>

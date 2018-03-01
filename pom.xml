@@ -48,8 +48,22 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+			 <!-- 移除嵌入式tomcat插件 -->
+   <!--  <exclusions>
+        <exclusion>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+        </exclusion>
+    </exclusions>  -->
+			 <!-- 移除嵌入式tomcat插件 -->
 		</dependency>
-
+<!-- war -->
+<!--  <dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>javax.servlet-api</artifactId>
+    <scope>provided</scope>
+</dependency>  --> 
+<!-- war -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -75,6 +89,10 @@
 		<artifactId>druid</artifactId>
 		<version>1.0.29</version>
 	</dependency>
+    	  	<dependency>
+    	  		<groupId>com.hazelcast</groupId>
+    	  		<artifactId>hazelcast</artifactId>
+    	  	</dependency>
 	</dependencies>
 
 	<build>
@@ -83,6 +101,17 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			
+<!--  			  <plugin>  
+<groupId>org.apache.maven.plugins</groupId>  
+<artifactId>maven-war-plugin</artifactId>  
+<configuration>  
+    <warSourceExcludes>src/main/resources/**</warSourceExcludes>  
+    <warName>forum</warName>  
+</configuration>  
+</plugin>  -->
+
+			
 		</plugins>
 	</build>
 

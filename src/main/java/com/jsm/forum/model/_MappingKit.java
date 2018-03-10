@@ -17,6 +17,7 @@ public class _MappingKit {
 
 	public static void mapping(ActiveRecordPlugin arp) {
 		arp.addMapping("basic_user", "user_id", BasicUser.class);
+		arp.addMapping("forum_posts", "id", ForumPosts.class);
 	}
 }
 

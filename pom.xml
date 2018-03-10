@@ -49,20 +49,30 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 			 <!-- 移除嵌入式tomcat插件 -->
-   <!--  <exclusions>
+<!--     <exclusions>
         <exclusion>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
         </exclusion>
-    </exclusions>  -->
+    </exclusions>   -->
 			 <!-- 移除嵌入式tomcat插件 -->
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/net.iharder/base64 -->
+<!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
+<dependency>
+    <groupId>commons-codec</groupId>
+    <artifactId>commons-codec</artifactId>
+</dependency>
+
+		
+		
 <!-- war -->
-<!--  <dependency>
+<!--   <dependency>
     <groupId>javax.servlet</groupId>
     <artifactId>javax.servlet-api</artifactId>
     <scope>provided</scope>
-</dependency>  --> 
+</dependency>  -->
 <!-- war -->
 		<dependency>
 			<groupId>mysql</groupId>
@@ -93,6 +103,26 @@
     	  		<groupId>com.hazelcast</groupId>
     	  		<artifactId>hazelcast</artifactId>
     	  	</dependency>
+    	  	
+    	  	<!-- https://mvnrepository.com/artifact/net.iharder/base64 -->
+<dependency>
+    <groupId>net.iharder</groupId>
+    <artifactId>base64</artifactId>
+    <version>2.3.9</version>
+</dependency>
+    	  
+    	  <dependency>
+    	      <groupId>commons-io</groupId>
+    	      <artifactId>commons-io</artifactId>
+    	      <version>1.3.2</version>
+    	  </dependency>	
+    	  
+    	  	  <dependency>
+    	      <groupId>commons-fileupload</groupId>
+    	      <artifactId>commons-fileupload</artifactId>
+    	      <version>1.2.1</version>
+    	  </dependency>
+    	  	
 	</dependencies>
 
 	<build>
@@ -102,15 +132,22 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			
-<!--  			  <plugin>  
+<!-- 			  <plugin>  
 <groupId>org.apache.maven.plugins</groupId>  
 <artifactId>maven-war-plugin</artifactId>  
 <configuration>  
     <warSourceExcludes>src/main/resources/**</warSourceExcludes>  
     <warName>forum</warName>  
 </configuration>  
-</plugin>  -->
+</plugin> 
 
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <configuration>
+     <skip>true</skip>
+    </configuration>
+   </plugin> -->
 			
 		</plugins>
 	</build>

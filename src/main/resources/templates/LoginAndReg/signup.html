@@ -23,6 +23,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 -->
 <!-- //web font -->
+
+	<!-- 提示框 -->
+	<link href="../promptbox/css/msgbox.css" rel="stylesheet" type="text/css"  />
+    <script type="text/javascript" src="../promptbox/js/msgbox.js"  ></script>
+    <script type="text/javascript" src="../promptbox/init_hide.js" ></script>
+    <!-- 提示框 -->
+
 </head>
 <body>
 <div class="snow-container">
@@ -99,23 +106,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     	if(name != "" && pwd != "" && pwdAgain != ""){
     		
     		if(pwd != pwdAgain){
-    			$("#word").html("两次输入密码不一致请重新输入");
-    		 	$("#myModal").modal("show");
+    			clickAutoHide(1,"两次输入密码不一致请重新输入",null);
     		 	return;
     		}
     		
     		$.post("/forum/LoginAndRegController/reg",{"username":name,"password":pwd},function(data){
     			
     			if(data == "1"){
-    				$("#word").html("注册成功即将跳往登录页...");
-        		 	$("#myModal").modal("show");
+    				clickAutoHide(4,"注册成功即将跳往登录页...",null);
         		 	
         		 	setTimeout(function(){
         		 		location.href = "/forum/LoginAndRegMapping/login";
         		 	},4000);
     			}else{
-    				$("#word").html(data);
-        		 	$("#myModal").modal("show");
+    				clickAutoHide(5,data,null);
     			}
     			
     		});
@@ -129,8 +133,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		$.post("/forum/LoginAndRegController/CheckUserName",{"username":name},function(data){
 			
     			if(data != ""){
-    				$("#word").html(data);
-        		 	$("#myModal").modal("show");
+    				clickAutoHide(5,data,null);
     			}
     			
     		});

@@ -15,4 +15,11 @@ public class homeMapping {
 		
 		return "/homepage/homepage";
 	}
+	
+	@RequestMapping("/header")
+	public String header() {
+		
+		return "/header/header";
+	}
+	
 }

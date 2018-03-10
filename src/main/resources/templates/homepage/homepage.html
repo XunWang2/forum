@@ -5,8 +5,330 @@
 <head>
 <meta charset="UTF-8" />
 <title>主页</title>
+
+    <link href="../bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" type="text/css"  />
+    <link href="../nec/function.css" rel="stylesheet" type="text/css"  />
+    <link href="../nec/reset.css" rel="stylesheet" type="text/css"  />
+    
+    
+   
+	<script type="text/javascript" src="../jqeury/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="../lb/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/homepage/css/boke.css" />
+     <link rel="stylesheet" type="text/css" href="../css/homepage/css/style.css" />
+    
+    	<!-- 提示框 -->
+	<link href="../promptbox/css/msgbox.css" rel="stylesheet" type="text/css"  />
+    <script type="text/javascript" src="../promptbox/js/msgbox.js"  ></script>
+    <script type="text/javascript" src="../promptbox/init_hide.js" ></script>
+    <!-- 提示框 -->
+    
+    <style type="text/css">
+  body{
+   background: #f2f2f2;
+   }
+    /* 两列定宽布局 */
+.g-bd{width:950px;margin:0 auto;}
+.g-sd{float:right;width:230px;height:500px; }
+.g-mn{float:left;width:710px;height:500px; }
+.head{
+   width: 100%;
+   height: 340px;
+   margin-top: 50px;
+   margin-bottom: 50px;
+}
+	.img img{
+		border-radius: 4px;
+		width: 100%;
+	}
+	.flex-viewport{
+		border-radius: 4px;
+	}
+	.flexslider{
+		height: 340px;
+		width: 100%;
+	}
+	/* 导航栏 */
+
+	/* 单个的帖子    */
+.jumbotron{
+ /*  height: 210px; */
+  border-radius: 4px;
+  background:  #ffffff;
+  margin-bottom: 17px;
+}
+
+.load-more {
+    width: 100%;
+    border-radius: 20px;
+    background-color: #a5a5a5;
+}
+.load-more {
+    width: 100%;
+    height: 40px;
+    margin: 30px auto 60px;
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 20px;
+    color: #fff;
+    background-color: #a5a5a5;
+    display: block;
+}
+
+
+  
+    </style>
 </head>
 <body>
-<h1>这是主页:欢迎<span th:text="${session.user.username}"></span></h1>
+
+
+<div th:include="header/header :: html "></div>
+
+<!-- <nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">想你所想，做你想做<span class="glyphicon glyphicon-thumbs-up"></span></a>
+    </div>
+    
+    <div class="navbar-header"  style="margin-left: 15%;">
+      <a class="navbar-brand t" href="#">&nbsp;首页</a>
+      <a class="navbar-brand t" href="#">发布</a>
+      <a class="navbar-brand t" href="#">我的关注</a>
+      <a class="navbar-brand t" href="#">我的收藏</a>
+    </div>
+    
+    	<form class="navbar-form navbar-left" role="search">
+		<div class="form-group">
+			<input type="text" class="form-control" placeholder="Search" />
+		</div>
+		<button type="submit" class="btn btn-default">搜索</button>
+	</form>
+    
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
+    </ul>
+  </div>
+</nav> -->
+
+
+<div class="g-bd f-cb">
+      
+    <div class="head">
+          <div id="demo01" class="flexslider">
+	<ul class="slides">
+		<li><div class="img"><img src="../lb/images/5.jpg" height="340"  alt="" /></div></li>
+
+		<li><div class="img"><img src="../lb/images/2.jpg" height="340"  alt="" /></div></li>
+
+		<li><div class="img"><img src="../lb/images/6.jpg" height="340"  alt="" /></div></li>
+
+		<li><div class="img"><img src="../lb/images/4.jpg" height="340"  alt="" /></div></li>
+	</ul>
+</div>
+    
+    
+    </div>
+
+    <div class="g-mn" >
+      
+         <div id="content">
+         </div>
+        <!-- 左侧内容 -->  
+        <a data-page="3" href="javascript:void(0)"  onclick="readMore()" class="load-more">阅读更多</a>
+    </div>
+
+    
+    <div class="g-sd">
+			    
+			<div class="container left">
+			   <div class="jumbotron leftChildren">
+			           
+			    <div class="userModule">
+			           <div class="userModule1">
+			           
+			            <div id="headInfo">
+                            <div class="head2">
+                                <img class="product_1" src="../css/homepage/img/product_1_ani.png" />
+                            </div>
+                           <div class="info">
+                                <span class="head-login" style="cursor:pointer;" onclick="login();">登录</span>
+                                <br/>
+                                <span>社区新首页等你来体验</span>
+                           </div>
+                        </div>
+			           
+			           </div>
+			           <div class="userModule2">
+			           
+			           
+                <div class="module cl xl xl1">
+                    <ul>
+	                                    <li><a class="replace-hot" href="" title="幸运抽奖" target="_blank">幸运抽奖</a></li>
+	                                    <li><a class="replace-hot" href="" title="兑换商城 " target="_blank">兑换商城 </a></li>
+	                                    <li><a class="replace-hot" href="" target="_blank">酷品试用</a></li>
+	                                    <li><a class="replace-hot" href="" title="新人福利" target="_blank">新人福利</a></li>
+	                                    <li><a class="replace-hot" href="" title="H2OS宝典" target="_blank">H2OS宝典</a></li>
+	                                    <li><a class="replace-hot" href="" title="签到排行" target="_blank">签到排行</a></li>
+                        </ul>
+                </div>
+         
+			                 
+			           
+			           </div>
+			
+			   </div>
+			</div>
+    </div>
+    
+    <!-- 热门板块 -->
+    <div class="container left">
+			<div class="jumbotron leftChildren2">
+			              <div class="hot host_first">
+            <h4 class="hotbk hot2"><strong >热门版块</strong></h4>
+         
+            <div class="module cl2 xl xl1 moduleHot">
+                <ul class="hotul">
+                                        <li><a class="replace-hot" href="" title="轻摄影" target="_blank">玩机专区</a></li>
+                                        <li><a class="replace-hot" href="" title="油乐园" target="_blank">油乐园</a></li>
+                                        <li><a class="replace-hot" href="" title="轻摄影" target="_blank">轻摄影</a></li>
+                                
+                 </ul>
+            </div>
+        </div>
+			</div>
+   </div>
+   <!-- 热门板块 -->
+   
+   <!-- 摄影专区 -->
+   <div class="container left">
+		  <div class="jumbotron leftChildren3">
+		  
+		          <div class="hot photography">
+            <h4 class="hotbk " ><strong>摄影专区</strong></h4>
+                <div class="module cl2 xl xl1 phto">
+                    <ul >
+                                                <li><a class="replace-hot" href="" title="活动|一加社区春日摄影大赛" target="_blank">活动|一加社区春日摄影大赛</a></li>
+                                                <li><a class="replace-hot" href="" title="年味|红灯高挂家团圆事业兴" target="_blank">年味|红灯高挂家团圆事业兴</a></li>
+                                                <li><a class="replace-hot" href="" title="教程|像摄影师一样拍摄美食" target="_blank">教程|像摄影师一样拍摄美食</a></li>
+                                                <li><a class="replace-hot" href="" title="年味|一加镜头下的粤西小城" target="_blank">年味|一加镜头下的粤西小城</a></li>
+                                                <li><a class="replace-hot" href="" title=" 加油精选|第59期精选作品" target="_blank"> 加油精选|第59期精选作品</a></li>
+                                                <li><a class="replace-hot" href="" title="游记|5T镜头下的金陵古城" target="_blank">游记|5T镜头下的金陵古城</a></li>
+                                            </ul>
+                </div>
+        </div>
+		  
+		  </div>
+</div>
+     <!-- 摄影专区 -->
+</div>
+</div>
+<script type="text/javascript" src="../lb/js/slider.js"></script> 
+<script type="text/javascript" src="../jqeury/base64.js" ></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+	var page=1; //全局变量 页数 
+	function login(){
+	location.href="/forum/LoginAndRegMapping/login";
+   }
+	
+	$(function(){
+		initHtml(page);
+	
+	})
+	function initHtml(page){
+	  $.post("/forum/homeController/getData",{"page":page},function(data){
+		  var html= "";
+		  if(data.rows.length == 0){
+			  clickAutoHide(2,"┗|｀O′|┛ 嗷~~ 没有更多了...",null);
+		  }
+		  data.rows.map(function(item,index){
+			  var img = "";
+			  var imgclass="divBuffer";
+				  if(item.cover != null){
+					  img = '<img src="../upload'+item.cover+'"/>';
+					  imgclass = "";
+				  }
+			
+		  html+=' <div class="jumbotron" >'+
+										'<div class="container">'+
+							     '<div class="bigdiv">'+
+						'<h2><img src="../css/homepage/img/alex goot.jpg"/>&nbsp;&nbsp;<span>'+item.username+'</span><span id="myclock">&emsp;'+item.create_date+'</span></h2>'+
+						'<div class="centerdiv">'+
+						'<div class= '+imgclass+'>'+
+						'<h1 onclick="toDetail('+item.id+')" >'+item.title+'</h1>'+
+						'<span>'+ item.text+' </span>'+
+						'</div>'+
+						 img+'<div style="clear:both"></div>'+
+						'</div>'+
+						'<div class="bottomdiv">'+
+						'<span>散文和诗</span>'+
+						'<img src="../css/homepage/img/see.jpg"/><span>'+item.look_time+'</span>'+
+						'<img src="../css/homepage/img/comment.jpg"/><span>888</span>'+
+						'<img src="../css/homepage/img/love.jpg"/><span>'+item.praise+'</span>'+
+						/* '<img src="../css/homepage/img/cai2.png"/><span>'+item.trample+'</span>'+ */
+						'</div>'+
+						'</div>'+
+						'</div>'+
+						'</div>';
+		  });
+		  $('.load-more').css({"pointer-events":""});
+		  
+		    $("#content").append(html);
+		 	$(".lading").fadeOut("normal",function(){
+				$(this).remove();
+			}) 
+		 
+	  })
+	 
+    }
+	
+	//阅读更多
+	function readMore(){
+		$('.load-more').css({"pointer-events":"none"});
+		page++;
+		initHtml(page);
+		
+	
+	}
+	
+	function toDetail(id){
+		location.href="/forum/detailMapping/detail2?detailId="+id;
+	}
+
+	/*animation: "slide", //转换方式 fade淡入淡出 slide滚动
+direction:"horizontal", //滚动方向 horizontal左右 vertical上下
+slideshowSpeed: 3000, //停留时间
+directionNav: true, //是否显示左右控制按钮 true&false
+controlNav: true, //是否显示下方控制按钮 true&false
+mousewheel: false, //是否允许鼠标控制滚动 true&fals*/
+
+$(function(){
+
+	$('#demo01').flexslider({
+
+		animation: "slide",
+
+		direction:"horizontal",
+
+		easing:"swing"
+
+	});
+
+
+	$('#demo02').flexslider({
+
+		animation: "slide",
+
+		direction:"vertical",
+
+		easing:"swing"
+	});
+});
+/*]]>*/
+</script>
+
 </body>
 </html>

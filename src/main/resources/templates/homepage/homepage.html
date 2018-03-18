@@ -123,7 +123,7 @@
 
 		<li><div class="img"><img src="../lb/images/2.jpg" height="340"  alt="" /></div></li>
 
-		<li><div class="img"><img src="../lb/images/6.jpg" height="340"  alt="" /></div></li>
+		<li><div class="img"><img src="../lb/images/7.jpg" height="340"  alt="" /></div></li>
 
 		<li><div class="img"><img src="../lb/images/4.jpg" height="340"  alt="" /></div></li>
 	</ul>
@@ -137,7 +137,7 @@
          <div id="content">
          </div>
         <!-- 左侧内容 -->  
-        <a data-page="3" href="javascript:void(0)"  onclick="readMore()" class="load-more">阅读更多</a>
+        <a  href="javascript:void(0)"  onclick="readMore()" class="load-more">阅读更多</a>
     </div>
 
     
@@ -239,11 +239,16 @@
 	
 	})
 	function initHtml(page){
+		  clickAutoHide(6,"正在加载中，请稍后...",100000);
 	  $.post("/forum/homeController/getData",{"page":page},function(data){
 		  var html= "";
+		
 		  if(data.rows.length == 0){
 			  clickAutoHide(2,"┗|｀O′|┛ 嗷~~ 没有更多了...",null);
+			  $('.load-more').css({"pointer-events":""});
+			  return;
 		  }
+			
 		  data.rows.map(function(item,index){
 			  var img = "";
 			  var imgclass="divBuffer";
@@ -277,6 +282,7 @@
 		  $('.load-more').css({"pointer-events":""});
 		  
 		    $("#content").append(html);
+		    $("#q_Msgbox").hide();
 		 	$(".lading").fadeOut("normal",function(){
 				$(this).remove();
 			}) 
@@ -289,6 +295,7 @@
 	function readMore(){
 		$('.load-more').css({"pointer-events":"none"});
 		page++;
+		
 		initHtml(page);
 		
 	

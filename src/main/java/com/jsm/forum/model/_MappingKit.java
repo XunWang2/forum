@@ -17,7 +17,11 @@ public class _MappingKit {
 
 	public static void mapping(ActiveRecordPlugin arp) {
 		arp.addMapping("basic_user", "user_id", BasicUser.class);
+		arp.addMapping("child_comments", "id", ChildComments.class);
+		arp.addMapping("comment", "id", Comment.class);
 		arp.addMapping("forum_posts", "id", ForumPosts.class);
+		arp.addMapping("i_like_the_article", "id", ILikeTheArticle.class);
+		arp.addMapping("i_like_the_comment", "id", ILikeTheComment.class);
 	}
 }
 

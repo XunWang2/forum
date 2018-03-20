@@ -240,7 +240,20 @@
 	})
 	function initHtml(page){
 		  clickAutoHide(6,"正在加载中，请稍后...",100000);
-	  $.post("/forum/homeController/getData",{"page":page},function(data){
+	//  $.post("/forum/homeController/getData",{"page":page},function(data){
+		  
+		   $.ajax({
+				type:"POST",
+				data: "page="+page,
+				url:"/forum/homeController/getData",
+				cache: false,
+				async:true,
+				success:function(data){
+					
+	/* 	 		}
+		   
+		   }); */ 
+		  
 		  var html= "";
 		
 		  if(data.rows.length == 0){
@@ -256,6 +269,24 @@
 					  img = '<img src="../upload'+item.cover+'"/>';
 					  imgclass = "";
 				  }
+			var count = 0;
+	/* 		$.post("/forum/homeController/getCommentCount",{"cid":item.id},function(data){
+				
+				count = data;
+			}); */
+			
+			   $.ajax({
+					type:"POST",
+					data: "cid="+item.id,
+					url:"/forum/homeController/getCommentCount",
+					cache: false,
+					async:false,
+					success:function(data){
+						
+						count = data;
+					}
+			   
+			   });
 			
 		  html+=' <div class="jumbotron" >'+
 										'<div class="container">'+
@@ -271,13 +302,15 @@
 						'<div class="bottomdiv">'+
 						'<span>散文和诗</span>'+
 						'<img src="../css/homepage/img/see.jpg"/><span>'+item.look_time+'</span>'+
-						'<img src="../css/homepage/img/comment.jpg"/><span>888</span>'+
+						'<img src="../css/homepage/img/comment.jpg"/><span>'+count+'</span>'+
 						'<img src="../css/homepage/img/love.jpg"/><span>'+item.praise+'</span>'+
 						/* '<img src="../css/homepage/img/cai2.png"/><span>'+item.trample+'</span>'+ */
 						'</div>'+
 						'</div>'+
 						'</div>'+
 						'</div>';
+						
+						
 		  });
 		  $('.load-more').css({"pointer-events":""});
 		  
@@ -287,7 +320,7 @@
 				$(this).remove();
 			}) 
 		 
-	  })
+	  }})
 	 
     }
 	

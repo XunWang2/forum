@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>页头</title>
+ <link href="../fontIcon/iconfont.css" rel="stylesheet" type="text/css"  />
+ 	
+ <style>
+   
+/*   body{
+ 
+ }  
+ /* 导航栏 */
+	.container-fluid{
+	  background:  #ffffff;
+	  position: fixed;
+      width: 100%;
+      z-index: 1000;
+      margin-top: -1px !important;
+      -moz-box-shadow: 0 3px   #f1e1b5; /* 老的 Firefox */
+box-shadow: 0 3px  #f1e1b5;
+height: 50px;
+font-family: "Helvetica Neue", Helvetica, "STHeiTi", sans-serif !important;
+	}
+	.t{
+	 color: black !important;
+	 font-size: 15px;
+	}
+	.t:hover{
+	 color: red !important;
+	} 
+	
+	.lading{
+  background: white;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 100000;
+  overflow: hidden;
+}
+.lodingChildren{
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    position: relative;
+    /* top: 48%; */
+    /* text-align: center; */
+    color: white;
+    margin-top: -150px;
+    margin-left: -150px;
+}
+.user .Myavatar {
+  /*   position: relative; */
+    width: 40px;
+    height: 40px;
+    margin: 6px 28px 8px 20px;
+    display: inline-block;
+}
+.Myavatar .img1 {
+    width: 100% !important;
+    height: 100% !important;
+    border: 1px solid #ddd !important;
+    border-radius: 50% !important;
+}
+.span1{
+    position: absolute !important;
+    top: 17px !important ;
+    color: gray !important;
+}
+.dropdown-menu{
+  right: 0 !important;
+  left: auto !important;
+  min-width:0px !important;
+}
+
+/* .btn {
+    display: inline-block !important;
+    padding: 6px 12px !important;
+    margin-bottom: 0 !important;
+    font-size: 14px !important;
+    font-weight: normal !important;
+    line-height: 1.42857143 !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    vertical-align: middle !important;
+    -ms-touch-action: manipulation !important;
+    touch-action: manipulation !important;
+    cursor: pointer !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    background-image: none !important;
+    border: 1px solid transparent !important;
+    border-radius: 4px !important;
+} */
+.btn-default {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc !important;
+}
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+#copy{
+  border-bottom: none;
+}
+ </style>
+</head>
+<body>
+<div class="lading">
+     <div class="lodingChildren">
+       <img alt="" src="../loading/loading.gif" />
+     </div>
+</div>
+<nav class="navbar navbar-default" role="navigation" id="copy">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">想你所想，做你想做<span class="glyphicon glyphicon-thumbs-up"></span></a>
+    </div>
+    
+    <div class="navbar-header"  style="margin-left: 15%;">
+      <a class="navbar-brand t" href="/forum/homeMapping/homepage">&nbsp;首页</a>
+      <a class="navbar-brand t" href="/forum/addMapping/add">发布</a>
+      <a class="navbar-brand t" href="#">我的关注</a>
+      <a class="navbar-brand t" href="#">我的收藏</a>
+    </div>
+    
+    	<form class="navbar-form navbar-left" role="search">
+		<div class="form-group">
+			<input type="text" class="form-control" placeholder="Search" />
+		</div>
+		<button type="submit" class="btn btn-default" id="searc">搜索</button>
+	</form>
+    
+    <div style="display: none">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/forum/LoginAndRegMapping/reg"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
+      <li><a href="/forum/LoginAndRegMapping/login"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
+    </ul>
+    </div>
+    
+    <!-- 登陆后显示头像 -->
+			<div style="float: right;" id="hoverUser">
+
+				<div class="user">
+					<div data-hover="dropdown">
+						<a class="Myavatar" >
+						<img class="img1" src="../css/homepage/img/alex goot.jpg" alt="120"  /><span class="span1" > <i style="font-size: 17px;" class="iconfont icon-xialasanjiao"></i></span>
+						</a>
+					</div>
+					
+					<ul class="dropdown-menu" >
+						<li><a href="/u/7434c25bd004"> 
+						
+						<span>我的主页</span>
+						</a>
+						</li>
+						
+						<li>
+							<!-- TODO bookmarks_path --> <a href="/bookmarks"> 
+						
+							<span>收藏的文章</span>
+						</a>
+						</li>
+						
+						<li><a href="/users/7434c25bd004/liked_notes"> 
+						
+						<span>喜欢的文章</span>
+						</a>
+						</li>
+						
+						
+						<li><a href="/forum/personal_DetailsMapping/personal_Details"> 
+						
+						<span>个人设置</span>
+						</a>
+						</li>
+						
+						<li><a href="/faqs"> 
+						  
+						  <span>帮助与反馈</span>
+						</a>
+						</li>
+						
+						<li><a rel="nofollow" data-method="delete" href="/sign_out">
+								
+								<span>退出</span>
+						</a>
+						</li>
+					</ul>
+				</div>
+
+
+			</div>
+
+		</div>
+</nav>
+<script type="text/javascript" src="../jqeury/jquery-2.1.4.min.js"></script>
+<script type="text/javascript">
+    
+    $("#hoverUser").hover(function(){
+    	$(".dropdown-menu").css({"display":"block"});
+    },function(){
+    	$(".dropdown-menu").css({"display":"none"});
+    }); 
+    
+</script>
+</body>
+</html>

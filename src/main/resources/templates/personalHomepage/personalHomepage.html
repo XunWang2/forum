@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="UTF-8" />
+<title>个人主页✌</title>
+
+
+       <link href="../bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" type="text/css"  />
+       
+    <link rel="stylesheet" media="all" href="../css/personal_homepage/web.css" />
+    <link href="../nec/reset.css" rel="stylesheet" type="text/css"  />
+    <link rel="stylesheet" media="all" href="../css/personal_homepage/entry.css" />
+  
+ 
+    <link href="../nec/function.css" rel="stylesheet" type="text/css"  />
+       <link href="../fontIcon/iconfont.css" rel="stylesheet" type="text/css"  />
+       <script src="../fontIcon/iconfont.js"></script>
+<style type="text/css">
+body{
+font:12px/180% Arial, Helvetica, sans-serif, "新宋体";
+   font-family:"Microsoft YaHei","arial";
+   overflow-X:hidden;
+   }
+button[data-v-6292e408] {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: auto !important;
+  cursor: pointer;
+}
+button *[data-v-6292e408] {
+    pointer-events: none;
+}
+button[data-v-6292e408]:focus {
+    outline-width: 0;
+}
+.person .main .main-top .btn-hollow {
+    padding: 8px 0;
+    width: 90px;
+    border: 1px solid #42c02e;
+    border-radius: 20px;
+}
+.article{
+    color:black !important;
+}
+.icon {
+   width: 1em; height: 1em;
+   vertical-align: -0.15em;
+   fill: currentColor;
+   overflow: hidden;
+   font-size: 20px;
+}
+
+</style></head>
+
+  <body class="reader-black-font" style="overflow-y: scroll;" lang="zh-CN">
+  <div th:include="header/header :: html "></div>
+
+    
+
+<div class="container person">
+  <div class="row">
+    <div class="col-xs-16 main">
+      <div class="main-top">
+  <a class="avatar" href="https://www.jianshu.com/u/7434c25bd004">
+    <img src="../css/homepage/img/alex goot.jpg" alt="240" />
+</a>
+    <button data-v-6292e408="" class="off  user-follow-button"><i class="iconfont icon-jiahao"></i><span data-v-6292e408="">关注</span></button>
+    <a class="btn btn-hollow" >发简信</a>
+
+  <div class="title"  >
+    <a class="name" >爱疯草</a>
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-xingbienv"></use>
+   </svg>
+    
+  </div>
+  <div class="info">
+    <ul>
+      <li>
+        <div class="meta-block">
+          <a href="https://www.jianshu.com/users/7434c25bd004/following">
+            <p>1</p>
+            关注 <i class="iconfont ic-arrow"></i>
+</a>        </div>
+      </li>
+      <li>
+        <div class="meta-block">
+          <a href="https://www.jianshu.com/users/7434c25bd004/followers">
+            <p>0</p>
+            粉丝 <i class="iconfont ic-arrow"></i>
+</a>        </div>
+      </li>
+      <li>
+        <div class="meta-block">
+          <a href="https://www.jianshu.com/u/7434c25bd004">
+            <p>1</p>
+            文章 <i class="iconfont ic-arrow"></i>
+</a>        </div>
+      </li>
+      <li>
+        <div class="meta-block">
+          <p style=" margin-bottom: -1px;">12</p>
+          <div>字数</div>
+        </div>
+      </li>
+      <li>
+        <div class="meta-block">
+          <p style=" margin-bottom: -1px;" >0</p>
+          <div>收获喜欢</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+      <ul class="trigger-menu" dasta-pjax-container="#list-container"><li class="active"><a >
+      <i class="iconfont ic-articles"></i> 文章</a></li>
+      <li class=""><a><i class="iconfont ic-feed"></i> 动态</a></li>
+      <li class=""><a ><i class="iconfont ic-latestcomments"></i> 最新评论</a></li>
+      <li class=""><a><i class="iconfont icon-remen1"></i> 热门</a></li>
+      </ul>
+
+      <div id="list-container">
+        <!-- 文章列表模块 -->
+<ul class="note-list" infinite-scroll-url="/u/7434c25bd004?order_by=shared_at">
+    
+
+<li id="note-11789936" data-note-id="11789936" class="">
+  <div class="content">
+    <div class="author">
+      <a class="avatar" target="_blank" href="https://www.jianshu.com/u/7434c25bd004">
+        <img src="../css/homepage/img/alex goot.jpg" alt="64" />
+</a>      <div class="info">
+        <a class="nickname" target="_blank" href="https://www.jianshu.com/u/7434c25bd004">爱疯草</a>
+        <span class="time" data-shared-at="2018-03-06T16:24:50+08:00">昨天 16:24</span>
+      </div>
+    </div>
+    <a class="title article" target="_blank" href="https://www.jianshu.com/p/1d253fd98183">无标题文章</a>
+    <p class="abstract">
+      阀手动阀士大夫发送 士大夫
+    </p>
+    <div class="meta">
+
+      <a target="_blank" href="https://www.jianshu.com/p/1d253fd98183">
+        <i class="iconfont ic-list-read"></i> 0
+</a>        <a target="_blank" href="https://www.jianshu.com/p/1d253fd98183#comments">
+          <i class="iconfont ic-list-comments"></i> 0
+</a>      <span><i class="iconfont ic-list-like"></i> 0</span>
+    </div>
+  </div>
+</li>
+
+</ul>
+
+
+<ul class="note-list" infinite-scroll-url="/u/7434c25bd004?order_by=shared_at">
+    
+
+<li id="note-11789936" data-note-id="11789936" class="">
+  <div class="content">
+    <div class="author">
+      <a class="avatar" target="_blank" href="https://www.jianshu.com/u/7434c25bd004">
+        <img src="../css/homepage/img/alex goot.jpg" alt="64" />
+</a>      <div class="info">
+        <a class="nickname" target="_blank" href="https://www.jianshu.com/u/7434c25bd004">爱疯草</a>
+        <span class="time" data-shared-at="2018-03-06T16:24:50+08:00">昨天 16:24</span>
+      </div>
+    </div>
+    <a class="title article" target="_blank" href="https://www.jianshu.com/p/1d253fd98183">无标题文章</a>
+    <p class="abstract">
+      阀手动阀士大夫发送 士大夫
+    </p>
+    <div class="meta">
+
+      <a target="_blank" href="https://www.jianshu.com/p/1d253fd98183">
+        <i class="iconfont ic-list-read"></i> 0
+</a>        <a target="_blank" href="https://www.jianshu.com/p/1d253fd98183#comments">
+          <i class="iconfont ic-list-comments"></i> 0
+</a>      <span><i class="iconfont ic-list-like"></i> 0</span>
+    </div>
+  </div>
+</li>
+
+</ul>
+
+      </div>
+    </div>
+    
+<div class="col-xs-7 col-xs-offset-1 aside">
+      <div class="title">暂无个人介绍</div>
+  <div class="description">
+    <div class="js-intro"></div>
+    
+    
+  </div>
+  <div id="user-publications"><!----></div>
+  <div id="user-courses"><!----></div>
+  <ul class="list user-dynamic">
+    <li>
+      <a href="https://www.jianshu.com/users/7434c25bd004/subscriptions">
+        <i class="iconfont ic-collection"></i> <span>他关注的专题/文集/连载</span>
+</a>    </li>
+    <li>
+      <a href="https://www.jianshu.com/users/7434c25bd004/liked_notes">
+        <i class="iconfont ic-like"></i> <span>他喜欢的文章</span>
+</a>    </li>
+  </ul>
+  <!-- 专题和文集 -->
+  <div><div><!----> <!----></div> <!----> <div><div class="title">
+    他的文集
+  </div> <ul class="list"><li><a href="https://www.jianshu.com/nb/11005868" target="_blank"><i class="iconfont ic-search-notebook"></i></a> <a href="https://www.jianshu.com/nb/11005868" target="_blank" class="name">
+        日记本
+        <!----></a></li> <li><!----> <!----></li></ul></div></div>
+</div>
+
+  </div>
+</div>
+<div class="side-tool"><ul><li data-placement="left" data-toggle="tooltip" data-container="body" data-original-title="回到顶部" style="display: none;"><a class="function-button"><i class="iconfont ic-backtop"></i></a></li> <!----> <!----> <!----> <!----></ul></div>
+
+  
+    <script src="%E7%88%B1%E7%96%AF%E8%8D%89%20-%20%E7%AE%80%E4%B9%A6_files/babel-polyfill-2bec152a537b07763933.js" crossorigin="anonymous"></script>
+    <script src="%E7%88%B1%E7%96%AF%E8%8D%89%20-%20%E7%AE%80%E4%B9%A6_files/web-base-d9259fa9764c55491700.js" crossorigin="anonymous"></script>
+    <script src="%E7%88%B1%E7%96%AF%E8%8D%89%20-%20%E7%AE%80%E4%B9%A6_files/web-631dcf96f76845d65783.js" crossorigin="anonymous"></script>
+    
+    <script src="%E7%88%B1%E7%96%AF%E8%8D%89%20-%20%E7%AE%80%E4%B9%A6_files/entry-ed102b384546be1516a2.js" crossorigin="anonymous"></script>
+    <script>
+    window.onload=function(){ $('.lading').hide(); }
+/*   (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      }
+      else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+  })(); */
+</script>
+
+  
+
+</body></html>

@@ -1,0 +1,132 @@
+/*鏈�澶栧眰DIV*/
+.abroaddiv{
+	height:560px;
+	width:60%;
+	min-width:930px;
+	margin:50px 0 0 300px;
+	}
+/*鍐呴儴宸︿晶*/
+.leftdiv{
+	width:250px;
+	float:left;
+}
+.leftdiv ul li{
+	width:280px;
+	height:55px;
+	list-style:none;
+	overflow:auto;
+}
+.active{
+	background-color:#CCC;
+	}
+.leftdiv ul li:hover{
+	background-color:#CCC;
+}	
+.leftdiv ul li a {
+	text-decoration:none;
+	color:#000;
+}
+.leftdiv ul li a div{
+	height:55px;
+	line-height:55px;
+}
+.leftdiv ul li a div i{
+	margin-left:15px;
+	float:left;
+	}
+
+.abroaddiv div ul li a div span{
+	margin-left:15px;
+	font-size:15px;
+	float:left;
+}
+/*鍐呴儴鍙充晶*/
+.rightdiv{
+	float:left;
+	margin-left:50px;
+	}
+.rightdiv div{
+	height:100px;
+	width:600px;
+	cursor:pointer;
+	max-width:1170px;
+	}
+.rightdiv img{
+	width:100px;
+	height:100px;
+	border-radius:50px;
+	float:left;
+	border: 1px solid #ccc;
+}
+.btns{
+	display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+	margin-left:20px;
+	border: 1px solid #0C0;
+	color:#0C0;
+	border-radius:30px;
+	margin-top:35px;
+}
+.btn:hover{
+	text-decoration:none;
+
+	}
+.hide {
+    position: absolute;
+    display: block!important;
+    width: 82px;
+    opacity: 0;
+    text-align: start !important;
+}
+.rightdiv div span:nth-child(1){
+	line-height:100px;
+	height:100px;
+	width:100px;
+	font-size:15px;
+	color: #969696;
+	}
+.rightdiv div span:nth-child(2){
+	line-height:100px;
+	height:100px;
+	width:100px;
+	font-size:15px;
+	margin-left:54px;
+	}
+.oneinput{
+	margin-left:75px;
+}
+input{
+	vertical-align:sub;
+}
+input[type="radio"] span{
+	margin-left:10px;
+	font-size:14px;
+	
+}
+.tspan{
+	position: relative;
+    bottom: 35px;
+}
+textarea{
+	margin-left:26px;
+	padding: 8px 10px;
+	border: 1px solid #c8c8c8;
+	border-radius: 4px;
+	background-color: hsla(0,0%,71%,.1);
+	display:inline-block;
+	resize: none;
+	outline-style: none;
+	font-family:"Microsoft YaHei","arial";
+}
+.man{
+	margin-left: 55px !important;
+}

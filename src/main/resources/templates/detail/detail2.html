@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"  
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"> 
+	<head>
+		<meta charset="UTF-8" />
+		<title>新详情页面</title>
+		<link href="../bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" type="text/css"  />
+        <link href="../nec/function.css" rel="stylesheet" type="text/css"  />
+        <link href="../nec/reset.css" rel="stylesheet" type="text/css"  />
+        <link href="../fontIcon/iconfont.css" rel="stylesheet" type="text/css"  />
+		<link rel="stylesheet" href="../css/detail/css/detail2.css" />
+		
+					<!-- 提示框 -->
+	<link href="../promptbox/css/msgbox.css" rel="stylesheet" type="text/css"  />
+    <script type="text/javascript" src="../promptbox/js/msgbox.js"  ></script>
+    <script type="text/javascript" src="../promptbox/init_hide.js" ></script>
+    <!-- 提示框 -->
+		
+		
+		<style type="text/css">
+
+body{
+font:12px/180% Arial, Helvetica, sans-serif, "新宋体";
+   font-family:"Microsoft YaHei","arial";
+}
+
+  .note{
+   font-size:17px!important;
+   }
+   #content{
+   margin-bottom: 60px;
+   }
+   			
+.fv {
+   -moz-user-select:none;
+   -webkit-user-select:none;
+   user-select:none;  
+   margin-right: 20px;  
+}
+.fv2{
+   -moz-user-select:none;
+   -webkit-user-select:none;
+    user-select:none;  
+}
+
+/*  #content img{
+left:50%;
+margin-left:-100%;
+position:relative;
+max-width: 700px;
+max-height: 393px;
+}  */
+
+#content img{
+max-width:620px;
+height:auto !important;
+}
+.Content2 ul li{
+   float: left;
+    display: inline-block;
+    padding: 5px;
+}
+.Content2 ul{
+display: inline-block;
+ padding: 9px;
+}
+
+.emoji-modal-wrap{
+    height: 214px;
+    width: 342px;
+    position: absolute;
+    top: 131px;
+    border: 1px solid #ccc;
+    background: #ffff;
+    border-radius: 4px;
+    display: none;
+}
+.footer{
+margin-top: 240px;
+}
+.delete{
+    display: inline-block;
+    float: right;
+    font-size: 10px;
+    display: none;
+    cursor: pointer;
+}
+.zan:hover .delete{
+    display: inline-block;
+}
+.no-comment {
+    width: 226px;
+    height: 92px;
+    margin: 30px auto 20px;
+    background: url(../css/detail/images/comment.png) no-repeat;
+    background-size: contain;
+}
+.text {
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 12px;
+    color: #969696;
+}
+.text a{
+ color:#3194d0;
+}
+mark, .mark {
+    background-color: #fff;
+}
+.fabiao{
+ position: relative;
+}
+.date{
+position: relative;
+}
+.delete2{
+    float: right;
+    display: none;
+    font-size: 12px;
+    margin-top: 0px;
+    cursor: pointer;
+}
+.date:hover .delete2{
+display: inline-block;
+}
+
+.readMore{
+text-align: center;
+    background: gray;
+    border-radius: 40px;
+    height: 33px;
+    color: #fff;
+    line-height: 33px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+.cm{
+    font-size: 14px;
+    color: blue;
+    display: inline-block;
+    padding-bottom: 8px;
+     cursor: pointer;
+}
+
+
+		</style>
+	</head>
+	<body onclick="removeFace()">
+	
+	<!-- 头部导航栏 -->
+	 <div th:include="header/header :: html "></div>
+	<!-- 头部导航栏 -->
+		<div class="note">
+			<div class="post">
+				<div class="article">
+					<h1 class="title" id="title">你孤独过吗(二)</h1>
+					<div class="author">
+						<a class="avatar">
+							<img src="../css/detail/images/b035259d-4016-4375-b24f-7890cbf8a85c.png" />
+						</a>
+						<div class="info">
+							<span class="name"><a>刘超</a></span>
+							<a class="follow"><i class="iconfont icon-jiahao2"></i>关注</a>
+							<div class="meta">
+								<span class="publish-time" id="time"  >2018.02.28 10:12*</span>
+								<span class="wordage" id="wordLength" >字数 2324</span>
+								<span class="views-count" id="readTime" >阅读 1483</span>
+								<span class="comments-count">评论 71</span>
+								<span class="likes-count" id="like" >喜欢 99</span>
+							</div>
+						</div>
+					</div>
+					<div class="caption"><!-- 《伦理孤独》 --></div>
+					<div id="content"  >
+					<!-- <div class="img-view">
+						<img src="../css/detail/images/8460955-09cebd82230b552f.jpg" />
+						<span class="img-caption">图片发自简书App</span>
+					</div>
+					<p>关于孤独，许多作家都有过论述。其中我比较赞成周国平和蒋勋的说法，周国平认为：人们往往把善于交往看做是一种能力，其实耐得住孤独也是一种能力，而且是比交往更重要的一种能力。</p>
+					<p>蒋勋说：孤独没什么不好，使孤独变得不好，是因为你害怕孤独。又说：人类用有限的思维去图解无限的孤独，注定是徒劳的吧！</p>
+					<p>其实，只要注意观察和思考，你就会发现孤独和交往一样，几乎是无时不在，无处不在的，伦理孤独便是其中之一。</p>
+					<p>如果说，孤独是指个人和群体的关系，那么伦理孤独多是指少数对多数，小群体对大群体，个人或群体对社会法律制度以及约定俗成的道德伦礼的孤独。如果哪个人或小的群体违背这些既定的法律制度或约定俗成的道德伦礼，说句不太好听的话就是通常所说的“乱伦”。</p>
+					<p>一说到“乱伦”，人们首先想到的是a性关系的紊乱。其实这是侠意上的理解，广义的“乱伦”还应该包括很多方面。比如在中国以儒家文化占统治地位的“三纲五常”，其中的君为臣纲，父为子纲，夫为妻纲，早以已经被我们打乱，但是没有人认为这是“乱伦”。</p>
+					<p>比如中国的封建社会，女子一旦嫁人是没有离婚权力的，男子却可以随便找了理由休妻，而妻子则不能，于是就有了嫁鸡随鸡，嫁狗随狗的说法。那时的女子想离婚就是一种伦理孤独，不仅没人理解同情，也根本别想做到。嫁的男人不管再丑再渣再弱智再暴力你都得忍受，男人不发话，你如果提出离婚就是“乱伦”。现在，婚姻法规定结婚离婚自由，离婚当然不会被认为是“乱伦”。</p>
+					 -->
+					</div>
+					
+					<div class="follow-detail">
+						<div class="info">
+							<a class="avatar"><img src="../css/detail/images/b035259d-4016-4375-b24f-7890cbf8a85c.png" /></a>
+							<a class="follow">关注</a>
+							<a class="title">刘超</a>
+							<p>写了 118624 字，被 695 人关注，获得了 2074 个喜欢</p>
+						</div>
+						<div class="signature">国企员工，文学爱好者。作品曾发表在秦皇岛日报《咱爸咱妈》周报、北海日报、北海晚报及一些网络平台。</div>
+					</div>
+					<div class="like" id="cf">
+						<div class="fv" style="-moz-user-select:none;" onclick="like()" >
+							<b class="tupian"></b>
+							<span style="-moz-user-select:none;" >喜欢</span>
+						    <span style="-moz-user-select:none;" >|</span>
+						    <span style="-moz-user-select:none;" id="likeCount" >0</span>
+						</div>
+					</div>
+				</div>
+			
+	 			 <div class="denglu" id="denglu" >
+					<img src="../css/detail/images/b035259d-4016-4375-b24f-7890cbf8a85c.png" />
+					<div class="fabiao">
+								<textarea  placeholder="写下你的评论..."  onkeydown="keySend(event)" id="Smohan_text"  onclick="showOperation()"  ></textarea>
+								<div class="bom" style="display: none"  id="showOperation" >
+							
+							 <div data-v-b36e9416="" class="emoji-modal-wrap">
+						        <a data-v-b36e9416="" class="emoji">
+						          <i data-v-b36e9416="" class="iconfont ic-comment-emotions">
+						      	      <div id="Smohan_FaceBox" name="Smohan_FaceBox2" >
+	                                  </div>
+						           </i>
+						         </a> 
+						      </div> 
+									
+									<div class="fl"><img id="face" src="../css/detail/images/smile.png" /><span>Ctrl+Enter 发表</span></div>
+									<div class="fr"><span class="send" onclick="cancel()" >取消</span><span onclick="comment(this)" >发送</span></div>
+								   
+								</div>
+					</div>
+				</div>  
+				<!--  <a name="miao"></a>设置锚点方法1 -->
+				<div id="comment-list" class="comment-list"  >
+					<form class="new-comment" >
+						<a class="avatar">
+							<img src="../css/detail/images/avatar_default-78d4d1f68984cd6d4379508dd94b4210.png"/>
+						</a>
+						<div class="sign-container"><a class="btn-sign" href="/forum/LoginAndRegMapping/login">登录</a>
+							<span>后发表评论</span>
+						</div>
+					</form>
+				</div> 
+				<div class="footer"    >
+					<div class="top-title" id="mark">
+						<span ><font id="commentComment" ></font><font>条评论</font></span>
+						<span>只看作者</span>
+					</div >
+					
+					<span >
+					  <span id="mark2"></span>
+					</span>
+			<div class="readMore"  onclick="init()"  >查看更多</div>
+<!-- <ul class="pagination" id="need">
+</ul> -->
+
+
+<!-- 品论去 -->
+<div id="noComment" style="display: none">
+<div class="no-comment"></div>
+<div class="text">
+            智慧如你，不想<a>发表一点想法</a>咩~
+          </div>
+  </div>
+<!-- 品论去 -->
+				</div>
+			</div>
+		</div>
+		
+		<span th:if="${session.user!=null}" ><span id="userId" th:text="${session.user.userId}"></span></span>
+	
+	<div id="hideface" style="display:none"></div>
+	</body>
+	<script type="text/javascript" src="../jqeury/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+	<script src="../jqeury/jqeury-1.7.2.js"></script>
+	<script type="text/javascript" src="../jqeury/base64.js" ></script>
+	<script type="text/javascript" src="../jqeury/smohan.face.js" ></script>
+	<script type="text/javascript" src="../js/detail/detail.js" ></script>
+	<script>
+	/*<![CDATA[*/  
+	
+		//获取更多子评论
+		function readMoreChildComment(para){
+			  var userId = $("#userId").html();
+			  clickAutoHide(6,"正在加载中，请稍后...",100000);
+		/* 	    if(userId == null){
+			    	return;
+			    } */
+			    
+			var ChildCommentId = $(para).data('readmore');
+			
+			var page = $(para).data('readid');
+			page++;
+			$(para).data('readid',page);
+		
+			var rechild = "";
+		$.post("/forum/detailController/getChildComment",{"id":ChildCommentId,"page":page},function(data2){
+			
+			var DeleteOrDestroy2="举报";
+    		   
+	        	 if(data2.rows.length > 0 ){
+	        		
+	        		 data2.rows.map(function(item2,index2){
+	        			   
+	            		   if(item2.uid == userId ){
+	            	        	 DeleteOrDestroy2="删除";
+	            	         }
+			child = '<div class="people"><span class="cl" data-userSelfId="'+item2.uid+'" >'+item2.username+'</span>：'+
+	        	'<span class="cg myface" id="returnFace2'+index2+'" >'+item2.content+'</span></div>'+
+				'<div  class="date ss"><span>'+item2.create_date+'</span><a class="sm" onclick="commentin2(this)"  ><img src="../css/detail/images/huifu.png">回复</a><span class="delete2 " data-id="'+item2.cid+'"   onclick="deleteChildComment(this)" >'+DeleteOrDestroy2+'</span></div>';
+			   
+				$("#hideface").html(child);
+   		        $("#returnFace2"+index2).replaceface($("#returnFace2"+index2).html());
+   		        rechild +=  $("#hideface").html();
+	        		 
+	        		 });
+	        		 
+	        		 $(para).before(rechild); 
+	        		 $("#q_Msgbox").hide();
+	        		 $.post("/forum/detailController/getChildComment",{"id":ChildCommentId,"page":page+1},function(data3){
+	        			  if(data3.rows.length <1){
+	 	        			 $(para).hide();
+	 	        		 }
+	        		 });
+                   
+	        	 }
+	        	 
+		});
+		
+		
+    	} 
+		
+		  /*]]>*/  
+	</script>
+</html>

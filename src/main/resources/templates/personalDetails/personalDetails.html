@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"  
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"> 
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>用户设置</title>
+<link href="../bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" type="text/css"  />
+<link href="../nec/function.css" rel="stylesheet" type="text/css"  />
+<link href="../nec/reset.css" rel="stylesheet" type="text/css"  />
+<link rel="stylesheet" type="text/css" href="../css/personal_Details/iconfont.css"/>
+<link rel="stylesheet" type="text/css" href="../css/personal_Details/personal_Details.css"/>
+ 	<!-- 提示框 -->
+	<link href="../promptbox/css/msgbox.css" rel="stylesheet" type="text/css"  />
+    <script type="text/javascript" src="../promptbox/js/msgbox.js"  ></script>
+    <script type="text/javascript" src="../promptbox/init_hide.js" ></script>
+    <!-- 提示框 -->
+</head>
+<style>
+body{
+font:12px/180% Arial, Helvetica, sans-serif, "新宋体";
+
+   font-family:"Microsoft YaHei","arial";
+   overflow-X:hidden;
+   }
+   .nc{
+    padding: 5px 10px;
+    font-size: 15px;
+    border: 1px solid #c8c8c8;
+    border-radius: 4px;
+    background-color: hsla(0,0%,71%,.1);
+     font-family:"Microsoft YaHei","arial";
+   }
+   .save{
+     border-radius: 40px;
+    color: #fff;
+    background-color: #42c02e;
+    border-color: #42c02e;
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 37px;
+    font-size: 16px;
+    line-height: 1.42857;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+     font-family:"Microsoft YaHei","arial";
+     margin-top: 40px;
+   }
+</style>
+<body>
+
+<div th:include="header/header :: html "></div>
+
+<!--最外层div-->
+<div class="abroaddiv">
+<!--左侧div-->
+<div class="leftdiv">
+<ul>
+<li class="active"><a href="#"><div><i class="iconfont icon-renzheng"></i><span>基础设置</span></div></a></li>
+<li><a href="#"><div><i class="iconfont icon-gerenziliao"></i><span>个人资料</span></div></a></li>
+<li><a href="#"><div><i class="iconfont icon-yewujichushezhi"></i><span>微博认证</span></div></a></li>
+<li><a href="#"><div><i class="iconfont icon-renzheng"></i><span>黑名单</span></div></a></li>
+<li><a href="#"><div><i class="iconfont icon-renzheng"></i><span>赞赏设置</span></div></a></li>
+<li><a href="#"><div><i class="iconfont icon-renzheng"></i><span>账号管理</span></div></a></li>
+</ul>
+</div>
+<!--右侧div-->
+<div class="rightdiv">
+<div><img id="img" src="../css/personal_Details/xiaojian.jpg" alt="用户头像"/>
+<form  id="jvForm" action="" method="post" enctype="multipart/form-data" >
+
+<a class="btns"><input  name="pic" unselectable="on" type="file" id="HeardImg" onchange="HeardImgs()"  class="hide" />更改头像</a>
+
+</form>
+</div>
+
+<div style="height: 60px;"><span>昵称</span><span><input id="nc" class="nc" type="text" value="" /></span></div>
+
+<div><span>性别</span><input id="man" name="sex" class="oneinput man" type="radio" value="1" /> <span>男</span> <input id="woman" name="sex" type="radio" value="2" /> <span>女</span> <input id="private" name="sex" type="radio" value="0"  /> <span>保密</span></div>
+
+<div><span class="tspan">个人简介</span><textarea id="area" rows="5" cols="70" placeholder="填写您的个人简介"></textarea></div>
+<button class="save" onclick="save()" >保存</button>
+</div>
+
+</div>
+<span style="display: none" th:if="${session.user!=null}" >
+<span id="userId" th:text="${session.user.userId}"></span>
+<span id="UserName" th:text="${session.user.username}"></span>
+<span id="UserHeadImg" th:text="${session.user.headImg}"></span>
+<span id="UserSex" th:text="${session.user.sex}"></span>
+<span id="UserIntro" th:text="${session.user.intro}"></span>
+ </span>
+
+
+	<script type="text/javascript" src="../jqeury/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="../js/personal_Details/personal_Details.js"></script>
+<script type="text/javascript" src="../jqeury/jquery-form.js"></script>
+<script>
+/*<![CDATA[*/
+
+/*]]>*/
+</script>
+</body>
+</html>

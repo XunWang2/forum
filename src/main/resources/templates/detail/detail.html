@@ -1,0 +1,332 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>详情页✌</title>
+     <link href="../bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" type="text/css"  />
+     <link href="../nec/function.css" rel="stylesheet" type="text/css"  />
+      <link href="../nec/reset.css" rel="stylesheet" type="text/css"  />
+		<link rel="stylesheet" href="../css/detail/css/detail.css" />
+		<script type="text/javascript" src="../jqeury/jquery-2.1.4.min.js"></script>
+			<!-- 提示框 -->
+	<link href="../promptbox/css/msgbox.css" rel="stylesheet" type="text/css"  />
+    <script type="text/javascript" src="../promptbox/js/msgbox.js"  ></script>
+    <script type="text/javascript" src="../promptbox/init_hide.js" ></script>
+    <!-- 提示框 -->
+		<link href="../fontIcon/iconfont.css" rel="stylesheet" type="text/css"  />
+<style>
+body{
+font:12px/180% Arial, Helvetica, sans-serif, "新宋体";
+   font-family:"Microsoft YaHei","arial";
+   }
+   .note{
+   font-size:17px!important;
+   }
+   #content{
+   margin-bottom: 60px;
+   }
+   .Content2{
+      position: absolute;
+    width: 217px;
+    border: solid 1px gray;
+    z-index: 100;
+    background: #fff;
+    border-radius: 5px;
+/*     top: 127px; */
+    margin-top: 45px;
+   }
+    .Content2 ul{
+    padding: 10px;
+    display: inline-block;
+    }
+   .Content2 ul li{
+   float: left;
+   padding: 5px;
+   }
+</style>
+	</head>
+	<body onclick="removeFace()">
+	
+	   <div th:include="header/header :: html "></div>
+	
+		<div class="note">
+			<div class="post">
+				<div class="article">
+					<h1 class="title" id="title">你孤独过吗(二)</h1>
+					<div class="author">
+						<a class="avatar">
+							<img src="../css/detail/images/b035259d-4016-4375-b24f-7890cbf8a85c.png" />
+						</a>
+						<div class="info">
+							<span class="name"><a>刘超</a></span>
+							<a class="follow">关注</a>
+							<div class="meta">
+								<span class="publish-time" id="time" >2018.02.28 10:12*</span>
+								<span class="wordage" id="wordLength" >字数 2324</span>
+								<span class="views-count" id="readTime" >阅读 1483</span>
+								<span class="comments-count">评论 71</span>
+								<span class="likes-count" id="like" >喜欢 99</span>
+								
+							</div>
+						</div>
+					</div>
+					<div class="caption"><!-- 《伦理孤独》 --></div>
+					<div id="content"  >
+					<!-- <div class="img-view">
+						<img src="../css/detail/images/8460955-09cebd82230b552f.jpg" />
+						<span class="img-caption">图片发自简书App</span>
+					</div>
+					<p>关于孤独，许多作家都有过论述。其中我比较赞成周国平和蒋勋的说法，周国平认为：人们往往把善于交往看做是一种能力，其实耐得住孤独也是一种能力，而且是比交往更重要的一种能力。</p>
+					<p>蒋勋说：孤独没什么不好，使孤独变得不好，是因为你害怕孤独。又说：人类用有限的思维去图解无限的孤独，注定是徒劳的吧！</p>
+					<p>其实，只要注意观察和思考，你就会发现孤独和交往一样，几乎是无时不在，无处不在的，伦理孤独便是其中之一。</p>
+					<p>如果说，孤独是指个人和群体的关系，那么伦理孤独多是指少数对多数，小群体对大群体，个人或群体对社会法律制度以及约定俗成的道德伦礼的孤独。如果哪个人或小的群体违背这些既定的法律制度或约定俗成的道德伦礼，说句不太好听的话就是通常所说的“乱伦”。</p>
+					<p>一说到“乱伦”，人们首先想到的是性关系的紊乱。其实这是侠意上的理解，广义的“乱伦”还应该包括很多方面。比如在中国以儒家文化占统治地位的“三纲五常”，其中的君为臣纲，父为子纲，夫为妻纲，早以已经被我们打乱，但是没有人认为这是“乱伦”。</p>
+					<p>比如中国的封建社会，女子一旦嫁人是没有离婚权力的，男子却可以随便找了理由休妻，而妻子则不能，于是就有了嫁鸡随鸡，嫁狗随狗的说法。那时的女子想离婚就是一种伦理孤独，不仅没人理解同情，也根本别想做到。嫁的男人不管再丑再渣再弱智再暴力你都得忍受，男人不发话，你如果提出离婚就是“乱伦”。现在，婚姻法规定结婚离婚自由，离婚当然不会被认为是“乱伦”。</p> -->
+					</div>
+					<div class="follow-detail">
+						<div class="info">
+							<a class="avatar"><img src="../css/detail/images/b035259d-4016-4375-b24f-7890cbf8a85c.png" /></a>
+							<a class="follow">关注</a>
+							<a class="title">刘超</a>
+							<p id="userInfomation">写了 118624 字，被 695 人关注，获得了 2074 个喜欢</p>
+						</div>
+						<div ondblclick="ss()" class="signature">国企员工，文学爱好者。作品曾发表在秦皇岛日报《咱爸咱妈》周报、北海日报、北海晚报及一些网络平台。</div>
+					</div>
+				</div>
+				
+				<div id="comment-list" class="comment-list">
+					<form class="new-comment">
+						<a class="avatar">
+							<img src="../css/detail/images/avatar_default-78d4d1f68984cd6d4379508dd94b4210.png" />
+						</a>
+						
+					<!-- 	<div class="sign-container"><a class="btn-sign">登录</a>
+							<span>后发表评论</span>
+						</div> -->
+						
+						<div class="sign-container" >
+						     <textarea onkeydown="keySend(event)" name="111"  rows="" onclick="showOperation()" id="Smohan_text" cols="" style="border:none;padding: 12px;line-height: 1.5;" placeholder="写下你的评论..." ></textarea>
+						     
+						     <div class="write-function-block" id="showOperation"  style="display: none">
+						     <div data-v-b36e9416="" class="emoji-modal-wrap">
+						     <a data-v-b36e9416="" class="emoji">
+						     <i data-v-b36e9416="" class="iconfont ic-comment-emotions">
+						     	<div id="Smohan_FaceBox" name="Smohan_FaceBox2" >
+	                                </div>
+						     </i>
+						     </a> <!---->
+						      </div> 
+						     
+						     <div class="hint"> <i id="face" name="11"  style="font-size: 22px;position: absolute;left: -23px;cursor: pointer;" class="iconfont icon-biaoqing "></i>&nbsp;Ctrl+Enter 发表</div> 
+						       <a class="btn btn-send"   >发送</a> 
+						       <a class="cancel" onclick="cancel()" >取消</a>
+						     </div>
+						     	
+						</div>
+						
+					</form>
+				</div>
+				<div class="footer" id="comment" >
+					<div class="top-title">
+						<span>71条评论</span>
+						<span>只看作者</span>
+					</div>
+					<!-- 主评论 -->
+								<div class="menu">
+						<div class="jianjie">
+							<div class="pic"><img src="../css/detail/images/2-9636b13945b9ccf345bc98d0d81074eb.jpg" /></div>
+							<div class="title"><span>星之星</span></div>
+							<div class="miaoshu"><span>4楼 · 2018.02.28 12:19</span></div>
+						</div>
+						<div class="content">
+							<p>孤独不是悲观的，它是一种与自我相处的状态，是人生的各个阶段都要学会和保留的东西。伦理孤独是困扰社会的一个议题。道德和法律原本就有很多两难的模糊地带，人类社会今天也在面对一个巨大的伦理调整的时代。至于每个人面对的情况都有所不同，不会有固定的答案，在社会目前的伦理框架下，可以选择放在自己心灵的抽屉里，不一定非要打开它。</p>
+						</div>
+						<div class="zan">
+							<a><span><img src="../css/detail/images/zan.png" /></span><span class="mr md">3人赞</span></a>
+							<a><span class="mg"><img src="../css/detail/images/huifu.png" /></span><span class="mr">回复</span></a>
+						</div>
+					<!-- 回复评论 -->
+					<div class="sign-container"  style="margin-top: 24px;margin-bottom: 35px;">
+						     <textarea onkeydown="keySend(event)" rows="" name="222"  id="Smohan_text" cols="" style="border:none;padding: 12px;line-height: 1.5;" placeholder="写下你的评论..." ></textarea>
+						     
+						     <div class="write-function-block" id="showOperation"  >
+						     <div data-v-b36e9416="" class="emoji-modal-wrap">
+						     <a data-v-b36e9416="" class="emoji">
+						     <i data-v-b36e9416="" class="iconfont ic-comment-emotions">
+						     	<div id="Smohan_FaceBox" name="Smohan_FaceBox2" >
+	                                </div>
+						     </i>
+						     </a> <!---->
+						      </div> 
+						     
+						     <!--  .parent().prev().children().children().children().children()   -->
+						     
+						     <div class="hint"> <i id="face" name="223" style="font-size: 22px;position: absolute;left: -23px;cursor: pointer;" class="iconfont icon-biaoqing "></i>&nbsp;Ctrl+Enter 发表</div> 
+						       <a class="btn btn-send"   >发送</a> 
+						       <a class="cancel" onclick="cancel()" >取消</a>
+						     </div>
+						     	
+						</div>
+					<!-- 回复评论 -->
+					</div>
+					<!-- 主评论 -->
+					
+					
+					<div class="menu">
+						<div class="jianjie">
+							<div class="pic"><img src="../css/detail/images/2-9636b13945b9ccf345bc98d0d81074eb.jpg" /></div>
+							<div class="title"><span>星之星</span></div>
+							<div class="miaoshu"><span>4楼 · 2018.02.28 12:19</span></div>
+						</div>
+						<div class="content">
+							<p>孤独不是悲观的，它是一种与自我相处的状态，是人生的各个阶段都要学会和保留的东西。伦理孤独是困扰社会的一个议题。道德和法律原本就有很多两难的模糊地带，人类社会今天也在面对一个巨大的伦理调整的时代。至于每个人面对的情况都有所不同，不会有固定的答案，在社会目前的伦理框架下，可以选择放在自己心灵的抽屉里，不一定非要打开它。</p>
+						</div>
+						<div class="zan">
+							<a><span><img src="../css/detail/images/zan.png" /></span><span class="mr md">3人赞</span></a>
+							<a><span class="mg"><img src="../css/detail/images/huifu.png" /></span><span class="mr">回复</span></a>
+						</div>
+					<!-- 回复评论 -->
+					<div class="sign-container"  style="margin-top: 24px;margin-bottom: 35px;">
+						     <textarea onkeydown="keySend(event)" rows="" name="222"  id="Smohan_text" cols="" style="border:none;padding: 12px;line-height: 1.5;" placeholder="写下你的评论..." ></textarea>
+						     
+						     <div class="write-function-block" id="showOperation"  >
+						     <div data-v-b36e9416="" class="emoji-modal-wrap">
+						     <a data-v-b36e9416="" class="emoji">
+						     <i data-v-b36e9416="" class="iconfont ic-comment-emotions">
+						     	<div id="Smohan_FaceBox" name="Smohan_FaceBox2" >
+	                                </div>
+						     </i>
+						     </a> <!---->
+						      </div> 
+						     
+						     <!--  .parent().prev().children().children().children().children()   -->
+						     
+						     <div class="hint"> <i id="face" name="223" style="font-size: 22px;position: absolute;left: -23px;cursor: pointer;" class="iconfont icon-biaoqing "></i>&nbsp;Ctrl+Enter 发表</div> 
+						       <a class="btn btn-send"   >发送</a> 
+						       <a class="cancel" onclick="cancel()" >取消</a>
+						     </div>
+						     	
+						</div>
+					<!-- 回复评论 -->
+					</div>
+					<!-- 主评论 -->
+					
+					
+					<div class="menu">
+						<div class="jianjie">
+							<div class="pic"><img src="../css/detail/images/2-9636b13945b9ccf345bc98d0d81074eb.jpg" /></div>
+							<div class="title"><span>星之星</span></div>
+							<div class="miaoshu"><span>4楼 · 2018.02.28 12:19</span></div>
+						</div>
+						<div class="content">
+							<p>孤独不是悲观的，它是一种与自我相处的状态，是人生的各个阶段都要学会和保留的东西。伦理孤独是困扰社会的一个议题。道德和法律原本就有很多两难的模糊地带，人类社会今天也在面对一个巨大的伦理调整的时代。至于每个人面对的情况都有所不同，不会有固定的答案，在社会目前的伦理框架下，可以选择放在自己心灵的抽屉里，不一定非要打开它。</p>
+						</div>
+						<div class="zan">
+							<a><span><img src="../css/detail/images/zan.png" /></span><span class="mr md">3人赞</span></a>
+							<a><span class="mg"><img src="../css/detail/images/huifu.png" /></span><span class="mr">回复</span></a>
+						</div>
+						<div class="pinglun">
+							<div class="people"><span class="cl">刘超</span>：<span class="cl">@刘欣</span><span class="cg">老师高见<img src="../css/detail/images/cc.png" /></span></div>
+							<div class="date"><span>2018.02.28 12:05</span><a class="sm"><img src="../css/detail/images/huifu.png" />回复</a></div>
+							<div class="talk"><a><img src="../css/detail/images/delete.png" />添加新评论</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+     
+	   <script type="text/javascript" src="../jqeury/jqeury-1.7.2.js" ></script>
+		<script type="text/javascript" src="../jqeury/base64.js" ></script>
+		   
+		<script type="text/javascript" src="../jqeury/smohan.face.js" ></script>
+	<!-- 	<script src="http://www.jq22.com/jquery/1.7.2/jquery.min.js"></script>  -->
+		<script type="text/javascript"  >
+		/*<![CDATA[*/  
+		  window.onload=function(){ $('.lading').hide(); }
+	
+		
+		  $(function(){
+			  
+			
+			  /*  var detailId = [[${detailId}]]; 
+			   alert(detailId); */
+			 var detailId = GetQueryString("detailId");
+		     $.post("/forum/detailController/detail",{"detailId":detailId},function(data){
+		    	 if(data.success == "1"){
+		    		 $("#title").html(data.one.title);
+		    		 $("#content").html(decodeByBase64(data.one.content)); //主体内容
+		    		 $("#time").html(data.one.createDate); //时间
+		    		 $("#wordLength").html("字数 "+data.one.text.length); //字数
+		    		 $("#readTime").html("阅读 "+data.one.lookTime); //阅读次数
+		    		 $("#like").html("喜欢 "+data.one.praise); 
+		    		 $("#userInfomation").html("写了 "+data.textCount+" 字，被 695 人关注，获得了 "+data.like+" 个喜欢");
+		    	 }else{
+		    		 clickAutoHide(5,data.ErrorMsg,null);
+		    	 }
+		     });
+			   
+		  })
+		  
+		  
+		  //获取地址栏参数
+function GetQueryString(name)
+{
+     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+     var r = window.location.search.substr(1).match(reg);
+     if(r!=null)return  unescape(r[2]); return null;
+}
+		  
+		  function showOperation(){
+			  $("#showOperation").fadeIn();
+			  $("#comment").css({"margin-top":"60px"});  
+		  }
+		  
+		  function showOperation2(){
+			  $("#showOperation").fadeIn();
+			  $("#comment").css({"margin-top":"60px"});  
+		  }
+		  
+		  function cancel(){
+			  $("#showOperation").fadeOut();
+			  setTimeout(function(){
+				  $("#comment").css({"margin-top":"0px"}); 
+				  
+			  },500);
+			  
+		  }
+		  
+		  
+		  $(function(){
+			  $("#face").smohanfacebox({
+
+					Event : "click",	//触发事件	
+
+					divid : "Smohan_FaceBox", //外层DIV ID
+
+					textid : "Smohan_text" //文本框 ID
+
+				});
+		  })
+		  
+		  //移除表情
+		  function removeFace(){
+			  $('div[name=SmohanFaceBox]').hide(560);
+			//	 $btn.removeClass('in');
+		  }
+		  
+		  //ctrl+enter监听
+		  function keySend(event) {
+			  if (event.ctrlKey && event.keyCode == 13) {
+			  alert("发送成功");
+			  }
+			  }
+		  
+		  
+		  /*]]>*/  
+		</script>
+		
+	</body>
+</html>

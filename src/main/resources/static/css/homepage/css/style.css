@@ -1,0 +1,115 @@
+.userModule{
+	height: 100%;
+	width:100%;
+}
+.userModule1{
+	height: 50%;
+	width:100%;
+}
+.userModule2{
+	width:100%;
+	height: 50%;
+	border-top: 1px solid #ccc;
+}
+.left{
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+.leftChildren{
+  height:216px;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.leftChildren2{
+  height:110px;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.leftChildren3{
+  height:260px;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-top: 16px;
+}
+.head2,info{
+	float: left;
+}
+.info span:nth-of-type(1){
+	font-size: 14px;
+	color: #eb0028;
+}
+.info span:nth-of-type(2){
+	font-size: 14px;
+	color: #999;
+}
+
+.info{
+	padding-left: 10px;
+    display: inline-block;
+    padding-top: 10px;
+}
+#headInfo{
+    display: inline-block;
+    margin-top: -23px;
+    width: 100%;
+    padding: 0px 12px;
+}
+.product_1{
+	width: 56px;
+	height: 56px;
+}
+.module{
+	font-size:14px;
+	height: 100%;
+	margin-top: 22px;
+}
+.moduleHot{
+	font-size:14px;
+	height: 100%;
+	margin-top: 0px;
+}
+.module ul li{
+    float: left;
+    width: 33.333333%!important;
+    height: auto!important;
+    text-align: center;
+    line-height: 30px!important;
+}
+.module ul li a:hover{
+	color:#eb0028;
+}
+.hotbk{
+	font-size: 15px;
+	padding-left: 13px;
+}
+.hot2{
+	padding-top: 18px;
+    padding-bottom: 13px;
+}
+.module2{
+	border-top: 1px solid red;
+}
+.cl2{
+	border-top: 1px solid #ccc;
+}
+.host_first{
+  height: 100%;
+  width: 100%;
+  margin-top: -50px;	
+}
+.hotul{
+  margin-top: 18px;
+  margin-left: 4px;
+}
+.phto{
+	margin-top: 13px;
+}
+.phto ul li {
+	width: 100% !important;
+	margin-left: 13px;
+	text-align: left;
+}
+.phto ul{
+	margin-top: 15px;
+}

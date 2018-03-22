@@ -36,4 +36,31 @@ public abstract class BaseBasicUser<M extends BaseBasicUser<M>> extends Model<M>
 		return getStr("password");
 	}
 
+	public M setHeadImg(java.lang.String headImg) {
+		set("head_Img", headImg);
+		return (M)this;
+	}
+
+	public java.lang.String getHeadImg() {
+		return getStr("head_Img");
+	}
+
+	public M setSex(java.lang.Integer sex) {
+		set("sex", sex);
+		return (M)this;
+	}
+
+	public java.lang.Integer getSex() {
+		return getInt("sex");
+	}
+
+	public M setIntro(java.lang.String intro) {
+		set("intro", intro);
+		return (M)this;
+	}
+
+	public java.lang.String getIntro() {
+		return getStr("intro");
+	}
+
 }

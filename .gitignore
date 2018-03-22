@@ -1,23 +1,4 @@
 target/
-.buildpath
-.project
-.settings/
-META-INF/
-.externalToolBuilders/
-.classpath
-.prefs
-.metadata
-.MF
-.component
-.jsdtscope
-.container
-.name
-.launch
-.gitignore
-
-.checkstyle
-
-.externalToolBuilders/
 !.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###

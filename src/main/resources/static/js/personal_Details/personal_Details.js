@@ -40,9 +40,10 @@ $(function(){
 })
 
 function save(){
-
 	var username = $("#nc").val();
+	
 	if(username == "" ){
+		clickAutoHide(5,"昵称不能为空",null);
 		return;
 	}
 	
@@ -51,15 +52,25 @@ function save(){
 			
 			if(data != ""){
 				clickAutoHide(5,"昵称已被使用，换一个吧",null);
+				return;
 			}
 			
 		});
 	}
-
-	
-	
 	
 	var sex = $("input[type='radio']:checked").val();
+	var area = $("#area").val();
+	$.post("/forum/personal_DetailsController/editInformation",{"name":username,"sex":sex,"area":area},function(data){
+		
+		if(data.flag){
+			clickAutoHide(4,data.msg,null);
+		}else{
+			clickAutoHide(5,data.msg,null);
+		}
+		
+	});
+	
+	
 	//alert(sex);
 }
 

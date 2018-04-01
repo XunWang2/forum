@@ -151,7 +151,7 @@ background: #fff;
 			<!-- 提供额外的视觉效果，标识一组按钮中的原始动作 -->
 			<button type="button" class="btn btn-primary" onclick="save(1)" >发布所有人可看</button>&emsp;&emsp;&emsp;
 			<!-- 表示一个成功的或积极的动作 -->
-			<button type="button" class="btn btn-success"  onclick="save(0)" >保存仅自己可看</button>
+			<!-- <button type="button" class="btn btn-success"  onclick="save(0)" >保存仅自己可看</button> -->
 	</div>
    
    
@@ -178,6 +178,10 @@ background: #fff;
 	<!-- 上传封面返回的地址 -->
     <input type="hidden" value="" id="coverback"  />
     	<!-- 上传封面返回的地址 -->
+    	
+<span style="display: none" th:if="${session.user!=null}" >
+<span id="userId" th:text="${session.user.userId}"></span>
+ </span>
 </body>
 <script type="text/javascript" src="../ckeditor/ckeditor.js" ></script>
 <script type="text/javascript" src="../jqeury/base64.js" ></script>
@@ -258,6 +262,12 @@ CKEDITOR.editorConfig = function( config ) {
 	  })
 	  
 	  function save(isShow){
+		  
+		  var isLogin = $("#userId").html();
+		  if(isLogin == ""){
+			  clickAutoHide(5,"登陆后才可发布",null);
+			  return;
+		  }
 	
 		  var Content = CKEDITOR.instances.content.getData();
 		  var text = oCKeditor.document.getBody().getText();
@@ -280,8 +290,6 @@ CKEDITOR.editorConfig = function( config ) {
             	}
             });
             
-            /*   var decodeContent =  decodeByBase64(Content);
-              $("#d").html(decodeContent);  */
 	  }
     	    //上传封面Start
     	    //document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);

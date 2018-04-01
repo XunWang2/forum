@@ -1,4 +1,4 @@
-package com.jsm.forum.controller.loginController;
+	package com.jsm.forum.controller.loginController;
 
 import java.util.List;
 
@@ -100,6 +100,15 @@ public class LoginAndRegController {
 			}
 		}
 		return "0";
+	}
+	
+	// 注销登陆
+	@RequestMapping("/cancel")
+	public String cancel(HttpServletRequest req) {
+		HttpSession session = req.getSession();
+		session.removeAttribute("user");
+		
+		 return "/LoginAndReg/login";
 	}
 
 }

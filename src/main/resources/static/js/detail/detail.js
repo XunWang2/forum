@@ -19,9 +19,9 @@ $(function(){
 	page++;
 	// $("#mark2").html("");
 		  var id = GetQueryString("detailId");
-		/*  $.post("/forum/detailController/addLook",{"detailId":id,"page":page},function(data){
+		  $.post("/forum/detailController/addLook",{"detailId":id,"page":page},function(data){
 			  
-		  });*/
+		  });
 		  
 		$("body").css({"overflow":"hidden"});
 		  var userId = $("#userId").html();
@@ -66,15 +66,19 @@ $(function(){
 	    		 $("#likeCount").html(data.one.praise);
 	    		 $("#commentComment").html(data.commentComment);
 	    		 $("#userInfomation").html("写了 "+data.textCount+" 字，被 695 人关注，获得了 "+data.like+" 个喜欢");
+	    		 $("#detailIntro").html(data.intro);
 	    		
 	    		 var temp = "";
 	    		 //评论
-	    		
-	    		 if( data.CommentList.rows.length== 0){
+	    		 if(data.isHave){
+	    			 $(".readMore").hide();
+	    		 }
+	    /*		 if( data.CommentList.rows.length== 0){
 	    			 clickAutoHide(2,"┗|｀O′|┛ 嗷~~ 没有更多了...",null);
 	    			 isHave = false;
+	    			 $(".readMore").hide();
 	    			 return;
-	    		 }
+	    		 }*/
 	    		
 	    		 data.CommentList.rows.map(function(item,index){
 	    			 var num=""; 
@@ -153,11 +157,17 @@ $(function(){
 		    				
 	    				});
 	    	     //    });
+	    	     	
+	    	        var userimg = '<img src="../css/detail/images/2-9636b13945b9ccf345bc98d0d81074eb.jpg" />';
 	    	        
-	    	     	 
+	    	        if(item.head_Img != null && item.head_Img!=""){
+	    	        	userimg = '<img src="../upload'+item.head_Img+'" />';
+	    	        }
+	    	        
+	    	        
 	    	         temp = '<div class="menu">'+
 	    			'<div class="jianjie">'+
-	    		'<div class="pic"><img src="../css/detail/images/2-9636b13945b9ccf345bc98d0d81074eb.jpg" /></div>'+
+	    		'<div class="pic"> '+userimg+'</div>'+
 	    		'<div class="title"><span>'+item.username+'</span></div>'+
 	    		'<div class="miaoshu"><span>'+(data.CommentList.rows.length - index)+'楼 · '+item.create_Date+' </span></div>'+
 	    	'</div>'+
@@ -416,10 +426,16 @@ if(r!=null)return  unescape(r[2]); return null;
         
         $.post("/forum/detailController/comment",{"content":content,"articleId":articleId},function(data){
         
+        	var ii = $("#UserHeadImgs").html();
+            var userimg = '<img src="../css/detail/images/2-9636b13945b9ccf345bc98d0d81074eb.jpg" />';
+	        
+	        if(ii!=""){
+	        	userimg = '<img src="../upload'+ii+'" />';
+	        }
    
         var temp = '<div class="menu">'+
 			'<div class="jianjie">'+
-		'<div class="pic"><img src="../css/detail/images/2-9636b13945b9ccf345bc98d0d81074eb.jpg"  /></div>'+
+		'<div class="pic">'+userimg+'</div>'+
 		'<div class="title"><span>'+data.username+'</span></div>'+
 		'<div class="miaoshu"><span>'+data.floor+'</span></div>'+
 	'</div>'+

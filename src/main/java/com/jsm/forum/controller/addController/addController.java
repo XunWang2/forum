@@ -128,5 +128,66 @@ public class addController {
 		}
 	}
 	
+	/**
+	 * 根据Id查找
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping("/getOne")
+	@ResponseBody
+	public ForumPosts getOne(HttpServletRequest request){
+		String id = request.getParameter("id");
+		ForumPosts fp = ForumPosts.dao.findById(id);
+		return fp;
+	}
+	
+	/**
+	 * 修改帖子
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping("/edit")
+	@ResponseBody
+	public String edit(HttpServletRequest request) {
+		String id = request.getParameter("id");
+		String content = request.getParameter("Content");
+		String title = request.getParameter("title");
+		String coverPath = request.getParameter("coverPath");
+		String isShow = request.getParameter("isShow");
+		String text = request.getParameter("text");
+		if(content == null || "".equals(content)) {
+			return "内容不能为空";
+		}
+		if(title == null || "".equals(title)) {
+			return "标题不能为空";
+		}
+		if(text == null || "".equals(text)) {
+			return "内容不能为空";
+		}
+		
+		ForumPosts posts = new ForumPosts();
+		
+		
+		if(coverPath != null && (!coverPath.equals(""))) {
+			posts.setCover(coverPath);
+		}
+		String time =   new SimpleDateFormat("yyy MM.dd HH:mm").format(new Date());
+		posts.setId(Integer.parseInt(id));
+		posts.setCreateDate(time); //时间
+		posts.setTitle(title); //标题
+		posts.setContent(content); //内容
+		posts.setIsShow(Integer.parseInt(isShow)); //是否公开
+		HttpSession session = request.getSession(); 
+		BasicUser user = (BasicUser) session.getAttribute("user");
+		posts.setUserId(user.getUserId()); //用户Id
+		posts.setText(text);
+		boolean flag = posts.update();
+		if(flag) {
+			return "1";
+		}else {
+			return "修改失败";
+		}
+	}
+	
 
 }

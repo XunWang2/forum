@@ -156,10 +156,10 @@ text-align: center;
 					<h1 class="title" id="title">你孤独过吗(二)</h1>
 					<div class="author">
 						<a class="avatar">
-							<img src="../css/detail/images/b035259d-4016-4375-b24f-7890cbf8a85c.png" />
+							<img id="detailImg1" src="../css/detail/images/2-9636b13945b9ccf345bc98d0d81074eb.jpg" />
 						</a>
 						<div class="info">
-							<span class="name"><a>刘超</a></span>
+							<span id="detainames2" class="name"><a>刘超</a></span>
 							<a class="follow"><i class="iconfont icon-jiahao2"></i>关注</a>
 							<div class="meta">
 								<span class="publish-time" id="time"  >2018.02.28 10:12*</span>
@@ -187,12 +187,12 @@ text-align: center;
 					
 					<div class="follow-detail">
 						<div class="info">
-							<a class="avatar"><img src="../css/detail/images/b035259d-4016-4375-b24f-7890cbf8a85c.png" /></a>
+							<a class="avatar"><img id="detailguanzhu" src="../css/detail/images/2-9636b13945b9ccf345bc98d0d81074eb.jpg" /></a>
 							<a class="follow">关注</a>
-							<a class="title">刘超</a>
-							<p>写了 118624 字，被 695 人关注，获得了 2074 个喜欢</p>
+							<a id="detailNames" class="title">刘超</a>
+							<p id="userInfomation"></p>
 						</div>
-						<div class="signature">国企员工，文学爱好者。作品曾发表在秦皇岛日报《咱爸咱妈》周报、北海日报、北海晚报及一些网络平台。</div>
+						<div id="detailIntro" class="signature"></div>
 					</div>
 					<div class="like" id="cf">
 						<div class="fv" style="-moz-user-select:none;" onclick="like()" >
@@ -205,7 +205,7 @@ text-align: center;
 				</div>
 			
 	 			 <div class="denglu" id="denglu" >
-					<img src="../css/detail/images/b035259d-4016-4375-b24f-7890cbf8a85c.png" />
+					<img id="detailsCommentImg" src="../css/detail/images/2-9636b13945b9ccf345bc98d0d81074eb.jpg" />
 					<div class="fabiao">
 								<textarea  placeholder="写下你的评论..."  onkeydown="keySend(event)" id="Smohan_text"  onclick="showOperation()"  ></textarea>
 								<div class="bom" style="display: none"  id="showOperation" >
@@ -262,7 +262,9 @@ text-align: center;
 			</div>
 		</div>
 		
-		<span th:if="${session.user!=null}" ><span id="userId" th:text="${session.user.userId}"></span></span>
+		<span style="display: none" th:if="${session.user!=null}" ><span id="userId" th:text="${session.user.userId}"></span>
+		<span  id="UserHeadImgs"  th:text="${session.user.headImg}"></span>
+		</span>
 	
 	<div id="hideface" style="display:none"></div>
 	</body>

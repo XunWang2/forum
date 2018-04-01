@@ -64,6 +64,7 @@ public class detailController {
 
 			int userId = posts.getUserId();
 			String CountSql = "select text,praise from forum_posts where user_id = " + userId;
+			Record  BU = Db.findById("basic_user", "user_id", userId);
 			List<ForumPosts> CountText = new ArrayList<ForumPosts>();
 			CountText = ForumPosts.dao.find(CountSql);
 			int textCount = 0;
@@ -71,6 +72,7 @@ public class detailController {
 			for (ForumPosts forumPosts : CountText) {
 				textCount += forumPosts.getText().length();
 				like += forumPosts.getPraise();
+				
 			}
 
 			// 查询有多少条评论
@@ -79,10 +81,9 @@ public class detailController {
 			String CildcommentSql = "select count(*) as childCount  from child_comments where forum_posts_id=" + detailId;
 			Record reord2 = Db.findFirst(CildcommentSql);
 			Record reord = Db.findFirst(commentSql);
-			String commentSql1 = "SELECT COUNT(DISTINCT c.id ),  c.id as commentId,c.user_id,c.forum_posts_id,c.content,c.create_Date,c.like,f.user_id as userid,f.username,ff.id,i.user_id as likeUserId,i.comment_id  ";
+			String commentSql1 = "SELECT COUNT(DISTINCT c.id ),  c.id as commentId,c.user_id,c.forum_posts_id,c.content,c.create_Date,c.like,f.head_Img,f.user_id as userid,f.username,ff.id,i.user_id as likeUserId,i.comment_id  ";
 			String commentSql2 = "  FROM COMMENT AS c LEFT JOIN basic_user AS f  ON c.user_id = f.user_id  left join forum_posts as ff on c.forum_posts_id = ff.id left join i_like_the_comment as i on i.comment_id = c.id    where ff.id="
 					+ detailId + " GROUP BY c.id  order by  c.id desc ";
-
 			String SerchLikeRecordSql = "SELECT f.id ,c.id AS cid,c.forum_posts_id, i.comment_id,i.user_id FROM forum_posts AS f \r\n"
 					+ "LEFT JOIN COMMENT AS c ON f.id = c.forum_posts_id LEFT JOIN i_like_the_comment AS i ON i.comment_id = c.id   WHERE f.id = "
 					+ detailId;
@@ -98,19 +99,24 @@ public class detailController {
 			map.put("map2", list);
 			
 			
-			String childSql = "select * from child_comments where ";
 			
-            System.out.println(page);
 			Page<Record> commentRecord = Db.paginate(page, 5, commentSql1, commentSql2);
-
+			Page<Record> commentRecord2 = Db.paginate(page+1, 5, commentSql1, commentSql2);
+			boolean ff = false;
+			if(commentRecord2.getList().size()==0) {
+				ff =true;
+			}
+			
 			mapList = PubJfinal.paseMap(commentRecord);
 			map.put("CommentList", mapList);
 			long count = reord.get("count");
 		    long count2 = reord2.get("childCount");
+		    map.put("isHave", ff);
 			map.put("commentComment", count + count2);
 			map.put("like", like);
 			map.put("textCount", textCount);
 			map.put("one", posts);
+			map.put("intro", BU.get("intro"));
 			map.put("success", "1");
 		} else {
 			map.put("ErrorMsg", "发生异常错误");

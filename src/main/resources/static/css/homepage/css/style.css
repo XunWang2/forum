@@ -58,6 +58,7 @@
 .product_1{
 	width: 56px;
 	height: 56px;
+	border-radius: 60px;
 }
 .module{
 	font-size:14px;

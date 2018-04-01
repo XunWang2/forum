@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="UTF-8" />
+<title>添加页面</title>
+
+<!-- 提示框 -->
+<link href="../bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet"
+	type="text/css" />
+<link href="../nec/function.css" rel="stylesheet" type="text/css" />
+<link href="../nec/reset.css" rel="stylesheet" type="text/css" />
+
+
+<script type="text/javascript" src="../jqeury/jquery-2.1.4.min.js"></script>
+<script type="text/javascript"
+	src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+
+<!-- 上传封面-->
+
+<!--         <link rel="stylesheet" type="text/css" href="../uploadCover/css/ycbootstrap.css"/> -->
+<link rel="stylesheet" type="text/css"
+	href="../uploadCover/css/reset.css" />
+<script src="../uploadCover/plugins/cover_js/iscroll-zoom.js"
+	type="text/javascript" charset="utf-8"></script>
+<script src="../uploadCover/plugins/cover_js/hammer.js"
+	type="text/javascript" charset="utf-8"></script>
+<script src="../uploadCover/plugins/cover_js/lrz.all.bundle.js"
+	type="text/javascript" charset="utf-8"></script>
+<script src="../uploadCover/plugins/cover_js/jquery.photoClip.min.js"
+	type="text/javascript" charset="utf-8"></script>
+<!-- 上传封面-->
+<!-- 提示框 -->
+<link href="../promptbox/css/msgbox.css" rel="stylesheet"
+	type="text/css" />
+<script type="text/javascript" src="../promptbox/js/msgbox.js"></script>
+<script type="text/javascript" src="../promptbox/init_hide.js"></script>
+<!-- 提示框 -->
+
+<style>
+body {
+	font: 12px/180% Arial, Helvetica, sans-serif, "新宋体";
+	background: #f2f2f2;
+	font-family: "Microsoft YaHei", "arial";
+	overflow-X: hidden;
+}
+
+.title {
+	font-size: 17px;
+}
+
+.CoverTitle {
+	font-size: 17px;
+	display: inline-block;
+	margin-left: 201px;
+}
+
+.titleGroup {
+	text-align: center;
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.buttomGroup {
+	margin-top: 15px;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.coverUpload {
+	margin-left: 232px;
+}
+
+.titleContainer div {
+	background: #fff;
+}
+
+.view{
+    width: 214px;
+    height: 160.5px;
+    background-color: rgb(102, 102, 102);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+
+}
+
+</style>
+</head>
+
+<body>
+	<div th:include="header/header :: html "></div>
+
+
+	<div class="titleGroup">
+		<span class="title">标题：</span> <input id="title" type="text"
+			class="form-control" style="width: 890px; display: inline-block"
+			placeholder="请输入标题" />
+	</div>
+
+
+	<!-- 上传封面 Star-->
+	<span class="CoverTitle">封面：</span>
+	<div class="coverUpload">
+
+		<div class="yc-upload-wrap" style="margin-top: -17px;">
+
+			<div class="yc-upload-box">
+
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 col-sm-12 col-xs-12" style="padding: 0;">
+
+							<div class="ycupload-mainbox">
+
+								<div class="ycupload-line"></div>
+								<div style="min-height: 1px;">
+									<div class="container">
+										<div class="row">
+											<div class="col-md-12 col-sm-12 col-xs-12"
+												style="padding-right: 0; padding-left: 36px;">
+
+												<!--<a href="javascript:void(0);" class="cover-uploadBtn">
+									        		<img src="img/yc_uploadimg_06.png"/>
+									        		<div id="clipArea"></div>
+													<input type="file" id="file">
+													<button id="clipBtn">截取</button>
+									        	</a>
+									        	<div id="view"></div>-->
+												<div
+													style="min-height: 1px; line-height: 160px; text-align: center; position: relative; margin-left: -11px;"
+													ontouchstart="">
+													<div class="cover-wrap"
+														style="display: none; position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); z-index: 10000000; text-align: center;">
+														<div class=""
+															style="width: 900px; height: 600px; margin: 30px auto; background-color: #FFFFFF; overflow: hidden; border-radius: 4px;">
+															<div id="clipArea" style="margin: 10px; height: 520px;"></div>
+															<div class=""
+																style="height: 56px; line-height: 36px; text-align: center; padding-top: 8px;">
+																<button id="clipBtn"
+																	style="width: 120px; height: 36px; border-radius: 4px; background-color: #ff8a00; color: #FFFFFF; font-size: 14px; text-align: center; line-height: 36px; outline: none; border: none;">保存封面</button>
+																<button id="clipBtn2" onclick="close()"
+																	style="width: 120px; height: 36px; border-radius: 4px; background-color: #ff8a00; color: #FFFFFF; font-size: 14px; text-align: center; line-height: 36px; outline: none; border: none;">关闭</button>
+															</div>
+														</div>
+													</div>
+
+													<div id="view" style="width: 214px; height: 160.5px;"
+														title="请上传 428*321 的封面图片"></div>
+													<div style="height: 10px;"></div>
+
+													<div class=""
+														style="width: 140px; height: 32px; border-radius: 4px; background-color: #ff8a00; color: #FFFFFF; font-size: 14px; text-align: center; line-height: 32px; outline: none; margin-left: 37px; position: relative;">
+														<form id="jvForm">
+															点击更改封面图 <input type="file" id="file" name="pic"
+																style="cursor: pointer; opacity: 0; filter: alpha(opacity = 0); width: 100%; height: 100%; position: absolute; top: 0; left: 0;" />
+
+														</form>
+													</div>
+
+												</div>
+
+
+											</div>
+										</div>
+									</div>
+
+								</div>
+								<div style="height: 25px;"></div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<input type="hidden" id="b" />
+	</div>
+	<!-- 上传封面 End-->
+
+
+	<div
+		style="width: 70%; margin: 0 auto; text-align: center; display: -webkit-box;">
+		<textarea rows="20" cols="2" class="ckeditor" name="content"></textarea>
+	</div>
+	<div class="buttomGroup">
+		<!-- 提供额外的视觉效果，标识一组按钮中的原始动作 -->
+		<button type="button" class="btn btn-primary" onclick="save(1)">修改</button>
+		&emsp;&emsp;&emsp;
+		<!-- 表示一个成功的或积极的动作 -->
+		<!-- <button type="button" class="btn btn-success"  onclick="save(0)" >保存仅自己可看</button> -->
+	</div>
+
+
+	<!-- 模态框（Modal） -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">&times;</button>
+				</div>
+				<div class="modal-body" id="word" style="text-align: center;">
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+					</button>
+
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal -->
+	</div>
+	<!-- 模态框 -->
+	<!-- 上传封面返回的地址 -->
+	<input type="hidden" value="" id="coverback" />
+	<!-- 上传封面返回的地址 -->
+
+	<span style="display: none" th:if="${session.user!=null}"> <span
+		id="userId" th:text="${session.user.userId}"></span>
+	</span>
+</body>
+<script type="text/javascript" src="../ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="../jqeury/base64.js"></script>
+
+<script>
+	/*<![CDATA[*/
+
+	$(function() {
+		init();
+
+	})
+var id;
+	function init() {
+		var editId = GetQueryString("editId");
+		id = editId;
+		if(editId == null){
+			clickAutoHide(1, "没有获取到id", null);
+			return;
+		}
+		$.post("/forum/addController/getOne",{"id":editId},function(data){
+			$("#title").val(data.title);
+			if(data.cover != null && data.cover!=""){
+				$("#view").addClass("view");
+				$("#view").css("background-image","url(../upload/coverImage/2018-03-23-16-58-25-052-2c55a4a9-6d9b-478d-89e1-b9b1d48db499.jpg)");
+			}
+			var decodeContent =  decodeByBase64(data.content);
+			CKEDITOR.instances.content.setData(decodeContent);
+			//alert(data);background-image view     background-image: url("");
+		});
+	}
+
+	//获取地址栏参数
+	function GetQueryString(name) {
+		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+		var r = window.location.search.substr(1).match(reg);
+		if (r != null)
+			return unescape(r[2]);
+		return null;
+	}
+
+	window.onload = function() {
+		$('.lading').hide();
+	}
+
+	var oCKeditor;
+	$(document).ready(function() {
+		oCKeditor = CKEDITOR.replace('content', {
+			language : 'zh-cn',
+			height : 400,
+			allowedContent : true
+		// 是否允许使用源码模式进行编辑
+		});
+		/* 	$(".lading").fadeOut("normal",function(){
+				$(this).remove();
+			}) */
+
+		/*	oCKeditor.on( 'instanceReady', function( event )
+		{
+			var editor = event.editor;
+			setTimeout( function()
+			{
+				// Delay bit more if editor is still not ready.
+				if ( !editor.element )
+				{
+					setTimeout( arguments.callee, 100 );
+					return;
+				}
+				event.removeListener( 'instanceReady', this.callee );
+				if ( editor.name == 'content' )
+				{
+					editor.resize( editor.container.getStyle( 'width' ), CKEDITOR.document.getById( 'cke_'+'content' ).getParent().$.offsetHeight );
+				}
+			}, 0 );
+		}, null, null, 9999 ); 
+		
+		
+		}) */
+
+		// 直接将配置内容写在function函数内即可
+		CKEDITOR.editorConfig = function(config) {
+			config.uiColor = '#f1e4db';
+			config.height = 200;
+			config.removePlugins = 'elementspath,resize'; // 移除编辑器底部状态栏显示的元素路径和调整编辑器大小的按钮
+			config.allowedContent = true; // 是否允许使用源码模式进行编辑
+			config.forcePasteAsPlainText = true; // 是否强制复制过来的文字去除格式
+			config.enterMode = CKEDITOR.ENTER_BR; // 编辑器中回车产生的标签CKEDITOR.ENTER_BR(<br>),CKEDITOR.ENTER_P(<p>),CKEDITOR_ENTER(回车)
+			// 设置快捷键
+			// 用于实现Ctrl + V进行粘贴
+			// 无此配置，无法进行快捷键粘贴
+			config.keystrokes = [ [ CKEDITOR.CTRL + 86 /* V */, 'paste' ] ];
+
+			// 设置快捷键，可能与浏览器冲突plugins/keystrokes/plugin.js
+			// 用于实现Ctrl + V进行粘贴
+			// 此配置将会启动粘贴之前进行过滤，若无此配置，将会出现粘贴之后才弹出过滤框
+			config.blockedKeystrokes = [ CKEDITOR.CTRL + 86 ];
+
+			// 图片上传相关
+			// config.filebrowserImageUploadUrl = 'D:\\upload'; // 图片上传路径
+config.image_previewText = ' '; // 图片信息面板预览区内容的文字内容，默认显示CKEditor自带的内容
+			// config.removeDialogTabs = 'image:advanced;image:Link'; // 移除图片上传页面的'高级','链接'页签
+		}
+	})
+
+	function save(isShow) {
+
+		var isLogin = $("#userId").html();
+		if (isLogin == "") {
+			clickAutoHide(5, "登陆后才可发布", null);
+			return;
+		}
+
+		var Content = CKEDITOR.instances.content.getData();
+		var text = oCKeditor.document.getBody().getText();
+		Content = encodeByBase64(Content);
+		var title = $("#title").val();
+		if (title == "") {
+			clickAutoHide(1, "请输入标题", null);
+			return;
+		}
+		if (text.trim() == "") {
+			clickAutoHide(1, "请输入内容", null);
+			return;
+		}
+		var coverPath = $("#coverback").val();
+		$.post("/forum/addController/edit", {
+			"id":id,
+			"title" : title,
+			"Content" : Content,
+			"coverPath" : coverPath,
+			"isShow" : isShow,
+			"text" : text.trim()
+		}, function(data) {
+			if (data == "1") {
+				clickAutoHide(4, "修改成功", null);
+			} else {
+				clickAutoHide(5, data, null);
+			}
+		});
+
+		/*   var decodeContent =  decodeByBase64(Content);
+		  $("#d").html(decodeContent);  */
+	}
+	//上传封面Start
+	//document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+	var clipArea = new bjj.PhotoClip("#clipArea", {
+		size : [ 428, 321 ],// 截取框的宽和高组成的数组。默认值为[260,260]
+		outputSize : [ 428, 321 ], // 输出图像的宽和高组成的数组。默认值为[0,0]，表示输出图像原始大小
+		//outputType: "jpg", // 指定输出图片的类型，可选 "jpg" 和 "png" 两种种类型，默认为 "jpg"
+		file : "#file", // 上传图片的<input type="file">控件的选择器或者DOM对象
+		view : "#view", // 显示截取后图像的容器的选择器或者DOM对象
+		ok : "#clipBtn", // 确认截图按钮的选择器或者DOM对象
+		loadStart : function() {
+			// 开始加载的回调函数。this指向 fileReader 对象，并将正在加载的 file 对象作为参数传入
+			$('.cover-wrap').fadeIn();
+			//	console.log("照片读取中");
+		},
+		loadComplete : function() {
+			// 加载完成的回调函数。this指向图片对象，并将图片地址作为参数传入
+			//	console.log("照片读取完成");
+		},
+		//loadError: function(event) {}, // 加载失败的回调函数。this指向 fileReader 对象，并将错误事件的 event 对象作为参数传入
+		clipFinish : function(dataURL) {
+			// 裁剪完成的回调函数。this指向图片对象，会将裁剪出的图像数据DataURL作为参数传入
+			$('.cover-wrap').fadeOut();
+			$('#view').css('background-size', '100% 100%');
+			console.log(dataURL);
+			$.post("/forum/addController/uploadImage", {
+				"pic" : dataURL
+			}, function(data) {
+				$("#coverback").val(data);
+			});
+
+		}
+	});
+	//clipArea.destroy();
+	//上传封面Start
+	$(function() {
+		$("#clipBtn2").on("click", function() {
+			$(".cover-wrap").css({
+				"display" : "none"
+			});
+		});
+	})
+
+	/*]]>*/
+</script>
+</html>

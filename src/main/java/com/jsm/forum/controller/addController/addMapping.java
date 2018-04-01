@@ -20,6 +20,15 @@ public class addMapping {
 		return "/add/add2";
 	}
 	
+	/**
+	 * 编辑页
+	 * @return
+	 */
+	@RequestMapping("/edit")
+	public String edit() {
+		return "/add/eidt";
+	}
+	
 	@RequestMapping("/upload")
 	public String upload() {
 		return "/add/uploadImage";

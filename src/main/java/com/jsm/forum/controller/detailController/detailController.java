@@ -60,6 +60,9 @@ public class detailController {
 		String sql = "select * from forum_posts where id=" + detailId;
 		ForumPosts posts = null;
 		posts = ForumPosts.dao.findFirst(sql);
+		
+		
+		
 		if (posts != null) {
 
 			int userId = posts.getUserId();
@@ -111,6 +114,11 @@ public class detailController {
 			map.put("CommentList", mapList);
 			long count = reord.get("count");
 		    long count2 = reord2.get("childCount");
+		    
+		    
+            String sls = "select u.username,head_Img from forum_posts f left join basic_user u on f.`user_id` = u.`user_id` where f.id = "+detailId;
+		    Record record = Db.findFirst(sls);
+		    map.put("record", record);
 		    map.put("isHave", ff);
 			map.put("commentComment", count + count2);
 			map.put("like", like);

@@ -110,7 +110,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		$.post("/forum/LoginAndRegController/login",{"username":name,"password":pwd},function(data){
 			if(data == "1"){
 		//		http://39.108.61.76/forum/homeMapping/homepage
-				location.href="/forum/homeMapping/homepage";
+				location.href="/forum/";
 			}else{
 				clickAutoHide(5,"用户名或密码错误请重试",null);
 			}

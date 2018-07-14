@@ -8,6 +8,8 @@ import com.jfinal.plugin.activerecord.generator.Generator;
 import com.jfinal.plugin.druid.DruidPlugin;
 
 public class GenerateModel {
+	
+	
 	public static void main(String[] args) {
     	// base model 所使用的包名
  		String baseModelPackageName = "com.jsm.forum.model.base";
@@ -39,7 +41,7 @@ public class GenerateModel {
 
 	private static DataSource getDataSource() {
 		// TODO Auto-generated method stub
-		PropKit.use("a_little_config.txt");
+		PropKit.use("application.properties");
 		DruidPlugin druidPlugin = createDruidPlugin();
 		druidPlugin.start();
 		return druidPlugin.getDataSource();
@@ -47,7 +49,7 @@ public class GenerateModel {
 	
 	//数据库连接池
 	public static DruidPlugin createDruidPlugin() {
-		return new DruidPlugin(PropKit.get("jdbcUrl"), PropKit.get("user"), PropKit.get("password").trim());
+		return new DruidPlugin(PropKit.get("spring.datasource.url"), PropKit.get("spring.datasource.username"), PropKit.get("spring.datasource.password").trim());
 	}
 	
 }

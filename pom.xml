@@ -6,7 +6,7 @@
 	<groupId>com.jsm</groupId>
 	<artifactId>demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>demo</name>
 	<description>Demo project for Spring Boot</description>
@@ -30,7 +30,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.4.7.RELEASE</version>
+		<version>1.5.14.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -49,12 +49,13 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 			 <!-- 移除嵌入式tomcat插件 -->
-<!--     <exclusions>
+    <exclusions>
+   
         <exclusion>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
         </exclusion>
-    </exclusions>   -->
+    </exclusions>  
 			 <!-- 移除嵌入式tomcat插件 -->
 		</dependency>
 		
@@ -68,11 +69,11 @@
 		
 		
 <!-- war -->
-<!--   <dependency>
+   <dependency>
     <groupId>javax.servlet</groupId>
     <artifactId>javax.servlet-api</artifactId>
     <scope>provided</scope>
-</dependency>  -->
+</dependency>  
 <!-- war -->
 		<dependency>
 			<groupId>mysql</groupId>
@@ -130,13 +131,15 @@
 	</dependencies>
 
 	<build>
+	
+	
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			
-<!-- 			  <plugin>  
+			  <plugin>  
 <groupId>org.apache.maven.plugins</groupId>  
 <artifactId>maven-war-plugin</artifactId>  
 <configuration>  
@@ -151,7 +154,7 @@
     <configuration>
      <skip>true</skip>
     </configuration>
-   </plugin> -->
+   </plugin>
 			
 		</plugins>
 	</build>

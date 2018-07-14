@@ -1,15 +1,12 @@
 package com.jsm.forum.Service;
 
 
-import static org.mockito.Matchers.anyDouble;
-
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.jfinal.plugin.activerecord.Db;
-import com.jfinal.plugin.activerecord.Record;
 import com.jsm.forum.model.Comment;
 import com.jsm.forum.model.ForumPosts;
 import com.jsm.forum.model.ILikeTheArticle;
@@ -66,7 +63,6 @@ public class detailService {
 			return;
 		}*/
 		
-		String likeSql = "select * from i_like_the_comment where user_id="+userId+" and comment_id="+commentId;
 	//	ILikeTheComment iLikeTheComment = ILikeTheComment.dao.findFirst(likeSql);
 		ILikeTheComment iLikeTheComment = new ILikeTheComment();
 			iLikeTheComment.setUserId(userId);

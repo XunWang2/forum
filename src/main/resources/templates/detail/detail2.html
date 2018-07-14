@@ -153,10 +153,10 @@ text-align: center;
 		<div class="note">
 			<div class="post">
 				<div class="article">
-					<h1 class="title" id="title">你孤独过吗(二)</h1>
+					<h1 class="title" id="title" style="text-align: center;" >你孤独过吗(二)</h1>
 					<div class="author">
 						<a class="avatar">
-							<img id="detailImg1" src="../css/detail/images/2-9636b13945b9ccf345bc98d0d81074eb.jpg" />
+							<img id="detailImg2" src="../css/detail/images/2-9636b13945b9ccf345bc98d0d81074eb.jpg" />
 						</a>
 						<div class="info">
 							<span id="detainames2" class="name"><a>刘超</a></span>
@@ -187,9 +187,9 @@ text-align: center;
 					
 					<div class="follow-detail">
 						<div class="info">
-							<a class="avatar"><img id="detailguanzhu" src="../css/detail/images/2-9636b13945b9ccf345bc98d0d81074eb.jpg" /></a>
+							<a class="avatar"><img id="detailguanzhu2" src="../css/detail/images/2-9636b13945b9ccf345bc98d0d81074eb.jpg" /></a>
 							<a class="follow">关注</a>
-							<a id="detailNames" class="title">刘超</a>
+							<a id="detailNames2" class="title">刘超</a>
 							<p id="userInfomation"></p>
 						</div>
 						<div id="detailIntro" class="signature"></div>
@@ -277,6 +277,10 @@ text-align: center;
 	<script>
 	/*<![CDATA[*/  
 	
+		$(function(){
+			$("#content img").parent().css("text-align","center");
+		})
+		
 		//获取更多子评论
 		function readMoreChildComment(para){
 			  var userId = $("#userId").html();
@@ -307,7 +311,7 @@ text-align: center;
 	        	'<span class="cg myface" id="returnFace2'+index2+'" >'+item2.content+'</span></div>'+
 				'<div  class="date ss"><span>'+item2.create_date+'</span><a class="sm" onclick="commentin2(this)"  ><img src="../css/detail/images/huifu.png">回复</a><span class="delete2 " data-id="'+item2.cid+'"   onclick="deleteChildComment(this)" >'+DeleteOrDestroy2+'</span></div>';
 			   
-				$("#hideface").html(child);
+				$("#hideface").html(htmlEncodeJQ(child));
    		        $("#returnFace2"+index2).replaceface($("#returnFace2"+index2).html());
    		        rechild +=  $("#hideface").html();
 	        		 

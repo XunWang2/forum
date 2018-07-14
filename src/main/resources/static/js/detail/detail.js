@@ -57,6 +57,16 @@ $(function(){
         
 	    	 
 	    	 if(data.success == "1"){
+	    		 
+	    		 if(data.record.columns.head_Img != null){
+	    			 $("#detailImg2").attr("src","../upload" + data.record.columns.head_Img);
+		    		 $("#detailguanzhu2").attr("src","../upload" + data.record.columns.head_Img);
+	    		 }
+	    		 $("#detainames2").html(data.record.columns.username); 
+	    		 $("#detailNames2").html(data.record.columns.username);
+	    		
+	    		 
+	    		 
 	    		 $("#title").html(data.one.title);
 	    		 $("#content").html(decodeByBase64(data.one.content)); //主体内容
 	    		 $("#time").html(data.one.createDate); //时间
@@ -68,6 +78,8 @@ $(function(){
 	    		 $("#userInfomation").html("写了 "+data.textCount+" 字，被 695 人关注，获得了 "+data.like+" 个喜欢");
 	    		 $("#detailIntro").html(data.intro);
 	    		
+	    		// $("#content img").parent().css("text-align","center");
+	    		 
 	    		 var temp = "";
 	    		 //评论
 	    		 if(data.isHave){
@@ -135,7 +147,7 @@ $(function(){
 	    		    	         }
 	    	        		 
 	    	        		 child = '<div class="people"><span class="cl" data-userSelfId="'+item2.uid+'" >'+item2.username+'</span>：'+
-	 	    	        	'<span class="cg myface" id="returnFace2'+index2+'" >'+item2.content+'</span></div>'+
+	 	    	        	'<span class="cg myface" id="returnFace2'+index2+'" >'+htmlEncodeJQ(item2.content)+'</span></div>'+
 	 	    				'<div  class="date ss"><span>'+item2.create_date+'</span><a class="sm" onclick="commentin2(this)"  ><img src="../css/detail/images/huifu.png">回复</a><span class="delete2 " data-id="'+item2.cid+'"   onclick="deleteChildComment(this)" >'+DeleteOrDestroy2+'</span></div>';
 	 	    				
 	    	        		 $("#hideface").html(child);
@@ -172,7 +184,7 @@ $(function(){
 	    		'<div class="miaoshu"><span>'+(data.CommentList.rows.length - index)+'楼 · '+item.create_Date+' </span></div>'+
 	    	'</div>'+
 	    	'<div class="content">'+
-	    		'<p id="returnFace'+index+'" >'+item.content+'</p>'+
+	    		'<p id="returnFace'+index+'" >'+htmlEncodeJQ(item.content)+'</p>'+
 	    	'</div>'+
 	    	'<div class="zan">'+
 	    		'<a onclick="CommentZan(this)" data-id="'+item.commentId+'" class="fv" style="-moz-user-select:none;" >'+num+'</a>'+
@@ -229,6 +241,20 @@ $(function(){
 		$("body").css({"overflow":"auto"});
 	
 	  } 
+
+function htmlEncodeJQ ( str ) {
+	
+	if(str.indexOf('script')>-1){
+		 return $('<span/>').text( str ).html();
+	}else{
+		return str;
+	}
+   
+}
+ 
+function htmlDecodeJQ ( str ) {
+    return $('<span/>').html( str ).text();
+}
 
 	  
 	  function initLike(){
@@ -421,7 +447,13 @@ if(r!=null)return  unescape(r[2]); return null;
     	    	location.href="/forum/LoginAndRegMapping/login";
     	    	return;
     	    }
-        var content = $(parameter).parent().parent().prev().val();
+        var content = $(parameter).parent().parent().prev().val().trim();
+        
+        if(content == ""){
+        	 clickAutoHide(2,"评论不能为空",null);
+        	 return;
+        }
+        
         var articleId = GetQueryString("detailId");
         
         $.post("/forum/detailController/comment",{"content":content,"articleId":articleId},function(data){
@@ -570,7 +602,11 @@ if(r!=null)return  unescape(r[2]); return null;
         
         
           function child_comment(para){
-      		var content = $(para).parent().parent().prev().val();
+      		var content = $(para).parent().parent().prev().val().trim();
+      		if(content == ""){
+      			clickAutoHide(2,"评论不能为空！",null);
+      			return;
+      		}
       		var articleId = GetQueryString("detailId");
       		var parentCommentId = jQuery($(para).parent().parent()).data('detailid');
       		$.post("/forum/detailController/childComment",{"content":content,"articleId":articleId,"parentCommentId":parentCommentId},function(data){

@@ -36,7 +36,9 @@ public class personal_DetailsController {
 		// 图片上传的相对路径（因为相对路径放到页面上就可以显示图片）
 		String u = getProperties.getPropertiesOne("imagePath") + "upload/headImage/" + newName + uuid + lastName;
 		String address = "/headImage/" + newName + uuid + lastName;
-
+        
+		System.out.println("上传地址"+u);
+		
 		// 用户Id
 		BasicUser user = (BasicUser) session.getAttribute("user");
 		if (user == null) {

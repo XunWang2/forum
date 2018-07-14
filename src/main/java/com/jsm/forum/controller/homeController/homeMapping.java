@@ -10,11 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/homeMapping")
 public class homeMapping {
 
-	@RequestMapping("/homepage")
-	public String homepage() {
-		
-		return "/homepage/homepage";
-	}
 	
 	@RequestMapping("/header")
 	public String header() {

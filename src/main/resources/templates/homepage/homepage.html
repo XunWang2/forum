@@ -6,22 +6,22 @@
 <meta charset="UTF-8" />
 <title>主页</title>
 
-    <link href="../bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" type="text/css"  />
-    <link href="../nec/function.css" rel="stylesheet" type="text/css"  />
-    <link href="../nec/reset.css" rel="stylesheet" type="text/css"  />
+    <link href="/forum/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" type="text/css"  />
+    <link href="/forum/nec/function.css" rel="stylesheet" type="text/css"  />
+    <link href="/forum/nec/reset.css" rel="stylesheet" type="text/css"  />
     
     
    
-	<script type="text/javascript" src="../jqeury/jquery-2.1.4.min.js"></script>
-	<script type="text/javascript" src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
-    <link rel="stylesheet" type="text/css" href="../lb/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="../css/homepage/css/boke.css" />
-     <link rel="stylesheet" type="text/css" href="../css/homepage/css/style.css" />
+	<script type="text/javascript" src="/forum/jqeury/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="/forum/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="/forum/lb/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/forum/css/homepage/css/boke.css" />
+     <link rel="stylesheet" type="text/css" href="/forum/css/homepage/css/style.css" />
     
     	<!-- 提示框 -->
-	<link href="../promptbox/css/msgbox.css" rel="stylesheet" type="text/css"  />
-    <script type="text/javascript" src="../promptbox/js/msgbox.js"  ></script>
-    <script type="text/javascript" src="../promptbox/init_hide.js" ></script>
+	<link href="/forum/promptbox/css/msgbox.css" rel="stylesheet" type="text/css"  />
+    <script type="text/javascript" src="/forum/promptbox/js/msgbox.js"  ></script>
+    <script type="text/javascript" src="/forum/promptbox/init_hide.js" ></script>
     <!-- 提示框 -->
     
     <style type="text/css">
@@ -119,13 +119,13 @@
     <div class="head">
           <div id="demo01" class="flexslider">
 	<ul class="slides">
-		<li><div class="img"><img src="../lb/images/5.jpg" height="340"  alt="" /></div></li>
+		<li><div class="img"><img src="/forum/lb/images/5.jpg" height="340"  alt="" /></div></li>
 
-		<li><div class="img"><img src="../lb/images/2.jpg" height="340"  alt="" /></div></li>
+		<li><div class="img"><img src="/forum/lb/images/2.jpg" height="340"  alt="" /></div></li>
 
-		<li><div class="img"><img src="../lb/images/7.jpg" height="340"  alt="" /></div></li>
+		<li><div class="img"><img src="/forum/lb/images/7.jpg" height="340"  alt="" /></div></li>
 
-		<li><div class="img"><img src="../lb/images/4.jpg" height="340"  alt="" /></div></li>
+		<li><div class="img"><img src="/forum/lb/images/4.jpg" height="340"  alt="" /></div></li>
 	</ul>
 </div>
     
@@ -151,7 +151,7 @@
 			           
 			            <div id="headInfo">
                             <div class="head2">
-                                <img class="product_1" src="../css/detail/images/2-9636b13945b9ccf345bc98d0d81074eb.jpg" />
+                                <img class="product_1" src="/forum/css/detail/images/2-9636b13945b9ccf345bc98d0d81074eb.jpg" />
                             </div>
                            <div class="info">
                                 <span class="head-login" style="cursor:pointer;" onclick="login();">登录</span>
@@ -225,8 +225,8 @@
      <!-- 摄影专区 -->
 </div>
 </div>
-<script type="text/javascript" src="../lb/js/slider.js"></script> 
-<script type="text/javascript" src="../jqeury/base64.js" ></script>
+<script type="text/javascript" src="/forum/lb/js/slider.js"></script> 
+<script type="text/javascript" src="/forum/jqeury/base64.js" ></script>
 <script type="text/javascript">
 /*<![CDATA[*/
 	var page=1; //全局变量 页数 
@@ -266,7 +266,7 @@
 			  var img = "";
 			  var imgclass="divBuffer";
 				  if(item.cover != null){
-					  img = '<img src="../upload'+item.cover+'"/>';
+					  img = '<img src="/forum/upload'+item.cover+'"/>';
 					  imgclass = "";
 				  }
 			var count = 0;
@@ -291,7 +291,7 @@
 		  html+=' <div class="jumbotron" >'+
 										'<div class="container">'+
 							     '<div class="bigdiv">'+
-						'<h2><img src="../css/homepage/img/alex goot.jpg"/>&nbsp;&nbsp;<span>'+item.username+'</span><span id="myclock">&emsp;'+item.create_date+'</span></h2>'+
+						'<h2><img src="/forum/css/homepage/img/alex goot.jpg"/>&nbsp;&nbsp;<span>'+item.username+'</span><span id="myclock">&emsp;'+item.create_date+'</span></h2>'+
 						'<div class="centerdiv">'+
 						'<div class= '+imgclass+'>'+
 						'<h1 onclick="toDetail('+item.id+')" >'+item.title+'</h1>'+
@@ -301,10 +301,10 @@
 						'</div>'+
 						'<div class="bottomdiv">'+
 						'<span>散文和诗</span>'+
-						'<img src="../css/homepage/img/see.jpg"/><span>'+item.look_time+'</span>'+
-						'<img src="../css/homepage/img/comment.jpg"/><span>'+count+'</span>'+
-						'<img src="../css/homepage/img/love.jpg"/><span>'+item.praise+'</span>'+
-						/* '<img src="../css/homepage/img/cai2.png"/><span>'+item.trample+'</span>'+ */
+						'<img src="/forum/css/homepage/img/see.jpg"/><span>'+item.look_time+'</span>'+
+						'<img src="/forum/css/homepage/img/comment.jpg"/><span>'+count+'</span>'+
+						'<img src="/forum/css/homepage/img/love.jpg"/><span>'+item.praise+'</span>'+
+						/* '<img src="/forum/css/homepage/img/cai2.png"/><span>'+item.trample+'</span>'+ */
 						'</div>'+
 						'</div>'+
 						'</div>'+
@@ -315,10 +315,10 @@
 		  $('.load-more').css({"pointer-events":""});
 		  
 		    $("#content").append(html);
-		    $("#q_Msgbox").hide();
+ 		    $("#q_Msgbox").hide();
 		 	$(".lading").fadeOut("normal",function(){
 				$(this).remove();
-			}) 
+			})  
 		 
 	  }})
 	 

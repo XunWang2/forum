@@ -1,7 +1,7 @@
 # forum
 博客
 
-WNXUnLoginView *view = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([WNXUnLoginView class]) owner:nil options:nil] lastObject];
+int main(int argc, char * argv[] { @autoreleasepool { return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]); } }
 
 首页
 ![image](https://github.com/liuchao1996/forum/blob/master/src/main/resources/static/img/%E9%A6%96%E9%A1%B5.jpg)

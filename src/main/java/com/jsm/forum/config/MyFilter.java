@@ -42,7 +42,7 @@ public class MyFilter implements Filter {
 			
 		}else {
 			
-			System.out.println("进来了"+url);
+			//System.out.println("进来了"+url);
 		 	HttpServletResponse repons =  (HttpServletResponse) respons;
 		 	repons.sendRedirect("/forum/LoginAndRegMapping/login");
 			
